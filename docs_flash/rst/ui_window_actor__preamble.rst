@@ -11,7 +11,7 @@ instances of the *UI Window* class. For many modal dialog type use cases, it is 
 VI wired directly into the calling VI with the front panel visible, which will block execution until
 the task is complete (see *Countdown Timer.vi* for example).
 
-Here are the basic steps for creating a new *UI Window *class:
+Here are the basic steps for creating a new *UI Window* class:
 
 - Create a new class inheriting from *UI Window*
 
@@ -98,7 +98,7 @@ creates several issues that the developer should keep in mind:
 
 - **User Events:** “Create User Event” VI creates a reference to a queue that is saved in class properties. Class methods call the “Generate User Event” VI to add an event to the queue. Actor Core wires a reference to the queue to its Event Structure and add cases to react each user event type. The class destructor should call “Destroy User Event” to clean up these references. This approach is ideal for reactive actors such as *UI Window* instances.
 
-- **Data Value Reference (DVR):**a DVR can be referenced by both class methods and Actor Core to refer to the same memory location. This approach is most valuable for time-critical applications such as in *Synchronization Device*. The flow of information should be unidirectional and extra care must be taken to avoid race conditions.
+- **Data Value Reference (DVR):** a DVR can be referenced by both class methods and Actor Core to refer to the same memory location. This approach is most valuable for time-critical applications such as in *Synchronization Device*. The flow of information should be unidirectional and extra care must be taken to avoid race conditions.
 
 - **Global variables:** this approach should be avoided if possible. It is currently used in FLASH for broadcasting some information across the whole application, such as the current frame number. This behavior will be changed in a future version.
 

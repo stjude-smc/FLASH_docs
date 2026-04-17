@@ -23,7 +23,7 @@ guide of how each *Device* class would be updated to support a new device type.
 
 **Power meter:**
 
-- **Thorlabs:**any power meter using the TLPM library should be supported without modification.
+- **Thorlabs:** any power meter using the TLPM library should be supported without modification.
 
 **Lasers:**
 

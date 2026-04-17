@@ -5,9 +5,9 @@ Style Guide
 
 This section describes programming style to help keep the code base consistent and “readable”.
 
-- **W**ire diagrams**** should fit within one screen** to avoid scrolling. To achieve this, avoid unnecessary white space, keep the scope of each VI to one well-defined purpose, and extract code blocks to new helper VI’s where it makes sense. This also helps to minimize chances of merge conflicts in team development.
+- **Wire diagrams** should fit within one screen to avoid scrolling. To achieve this, avoid unnecessary white space, keep the scope of each VI to one well-defined purpose, and extract code blocks to new helper VI’s where it makes sense. This also helps to minimize chances of merge conflicts in team development.
 
-- **T****erminals should use a consistent 4x2x4 pattern**, with inputs on the left and outputs on the right. Avoid wiring in more than 4 inputs – use clusters instead.
+- **Terminals** should use a consistent 4x2x4 pattern, with inputs on the left and outputs on the right. Avoid wiring in more than 4 inputs – use clusters instead.
 
 - Top left terminal is the primary input and top right is primary output. This is usually an object wire (for class methods) or resource handle (for file access, etc.).
 
@@ -35,9 +35,9 @@ This section describes programming style to help keep the code base consistent a
 
    Keep icons simple, with a top bar to identify the module/class and the middle part giving a brief text description of the function. Avoid custom icon images. An exception are HAL override methods (“hooks”), which include a downward blue arrow.
 
-- **C****omments** on wire diagrams should describe obscure constant values, algorithms, and document assumptions.
+- **Comments** on wire diagrams should describe obscure constant values, algorithms, and document assumptions.
 
-- **VI descriptions **should give a one sentence summary of the purpose of the function and describe each input and output terminal.
+- **VI descriptions** should give a one sentence summary of the purpose of the function and describe each input and output terminal.
 
 
 .. figure:: ../_static/flash_development_guide/img_flash_development_guide_0003.png

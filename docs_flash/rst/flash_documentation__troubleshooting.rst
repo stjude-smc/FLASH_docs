@@ -45,12 +45,12 @@ Although it should have come with DAQmx, you may need to install the NI-VISA dri
 Your configuration file is invalid. We recommend against manually editing these files as this is
 highly error prone. Use the configuration dialog in FLASH to edit these files instead.
 
-**Microscope is**** not detected** (Nikon Ti2)
+**Microscope is not detected** (Nikon Ti2)
 
 You must install the Nikon Ti2 SDK in order for the microscope to be detected. Verify the USB
 connection and the device shows up in Windows Device Manager.
 
-**“No cameras detected!” error on startup.** *(Hamamatsu cameras)
+**“No cameras detected!” error on startup.** (Hamamatsu cameras)
 
 Verify the cameras are turned on and have completed their startup procedure (status lights not
 flashing) before starting FLASH. If no lights come on at all, check the power connection. With the
@@ -77,7 +77,7 @@ Only a limited number of Hamamatsu camera models are currently supported. Please
 the case structure in the file “Hardware\\Hamamatsu Camera\\Max Lines Auto.vi”. For the stand-alone
 version, please contact us with the camera model number.
 
-**One of my cameras has an inverted **or rotated image**** relative to the others**
+**One of my cameras has an inverted** or rotated image**** relative to the others**
 
 You may need to change the Configuration settings for this camera to set one of the “flip” settings
 to “true”. If it is rotated, this must be fixed by physically rotating the camera so that it is
@@ -89,7 +89,7 @@ FLASH will not start if any hardware in the configuration file is not found or c
 failed. Either change the device type to “Disabled” or delete the Laser Configuration entry
 corresponding to the device.
 
-**Lasers are on and shutters are **open but I see nothing in the cameras/eyepieces**
+**Lasers are on and shutters are** open but I see nothing in the cameras/eyepieces**
 
 First, manually select filter and output port to eyepieces on the microscope body or remote control
 pad and verify you get the expected signal. If this does not work, the problem may be with the
@@ -114,7 +114,7 @@ triggering pulses on their “Trigger Input” line from the DAQ. Check the phys
 verify the output port specified in the configuration file under Virtual Camera – Sync Line is
 connected to the “external trigger” port of the camera.
 
-**When I move to a new field, some of the molecules near the border are already bleached****.**
+**When I move to a new field, some of the molecules near the border are already bleached**.
 
 Adjust the stage parameters in the configuration file to take a larger step in that direction. These
 values will depend on the size of the illuminated area.
@@ -127,14 +127,14 @@ movies with a sustained write speed > 2GB/s. Second, limit the use of other disk
 applications (such as Python or MATLAB for data analysis) while recording a movie. Finally, before
 acquiring a movie, wait until the previous one has completely saved to disk.
 
-**FLASH** is in a strange state where buttons do not work or behave unexpectedly.**
+**FLASH** is in a strange state where buttons do not work or behave unexpectedly.
 
 Stand-alone version: close FLASH. Verify the icon in the taskbar shows that it successfully exited.
 If it does not, use Task Manager to kill the process. Turn off the cameras, wait 10 seconds, and
 turn them on again. Wait for the cameras to complete their startup procedure and start FLASH. If
 this does not solve the problem, restart your computer.
 
-**S**till need help****?**
+**Still need help?**
 
 Please email `scott.blanchard@stjude.org <mailto:scott.blanchard@stjude.org>`_ with the following
 information:

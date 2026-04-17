@@ -22,10 +22,12 @@ function correctly, but this has not been verified.
 
 - Newport ESP300/301/302 (tested with LTA-HS motors). *Must be connected by **USB**.*
 
-- ASI controllers (tested with MS-2000 stage)
-*Must be connected by serial port (RS232) with 9600 baud **rate**.*
+- ASI controllers (tested with MS-2000 stage) 
+
+*Must be connected by serial port (RS232) with 9600 baud rate.*
 
 - Ludl MAC5000 or MAC6000 controller (tested with BioPrecision2 stage).
+
 *Must be connected by serial port (RS232) with 9600 baud rate.*
 
 - **DAQ** (for triggering shutters and cameras)
@@ -36,7 +38,7 @@ function correctly, but this has not been verified.
 
 - National Instruments USB-6501. We recommend against this option because the timing jitter is significantly worse than using an external device.
 
-- **Laser**** power control**
+- **Laser power control**
 
 - LaserQuantum: Opus, Ventus, and Gem (RS232 interface).
 

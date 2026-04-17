@@ -29,7 +29,7 @@ Below is a list of the configuration options:
 
 - **Wavelength**: wavelength of the laser line in nanometers.
 
-- **Max rate**** (Hz)**: defines how rapidly the shutters can cycle before overheating and/or being damaged. Refer to your device’s manual for this number.
+- **Max rate (Hz)**: defines how rapidly the shutters can cycle before overheating and/or being damaged. Refer to your device’s manual for this number.
 
 - **Device type**: type of DAQ device connected. Choose “Disabled” if none available – cameras will use internal triggering.
 
@@ -41,7 +41,7 @@ Below is a list of the configuration options:
 
 - **Lasers**
 
-- **Laser Type:**choose the driver type for this laser (LaserQuantum, OBIS, Coherent HOPS, PRM1Z8, or Disabled).
+- **Laser Type:** choose the driver type for this laser (LaserQuantum, OBIS, Coherent HOPS, PRM1Z8, or Disabled).
 
 - **Serial Port**: for RS232 connections (for LaserQuantum, OBIS, and Cobolt lasers).
 
@@ -73,13 +73,13 @@ Below is a list of the configuration options:
 
 - **Microscope**
 
-- **Microscope Type:** *Set to “Disable” if no supported stand is installed.
+- **Microscope Type:** Set to “Disable” if no supported stand is installed.
 
-- **Serial port****:** unused.
+- **Serial port**: unused.
 
 - **Detection settings:** this array populates the “Detection” dropdown list in the Main Window and defines the position of the filter block and light path inside the microscope. For the Ti2 microscope, the light path values are as follows: (1) Eyepieces, (2) Right port, (3) Bottom/U port, (4) Left port.
 
-- **Camera ****Driver**
+- **Camera Driver**
 
 - **Camera Type:** select the camera driver to use (Andor, Hamamatsu, or Photometrics).
 
@@ -91,9 +91,9 @@ Below is a list of the configuration options:
 
 - **Flip Vertically:** if true, raw images from this camera are flipped vertically so that it matches the orientation of the other cameras. If possible, arrange your optical system to avoid using any “flip” settings. Also please be aware that flipping vertically with sCMOS cameras may result in slight asynchrony between channels due to the line-by-line readout process; this will not be a problem in ALEX or stroboscopic modes and should not be an issue at all with Flash cameras.
 
-- **Flip Horizontally:**if true, raw camera images from this camera will be flipped horizontally for display and saving to file so that it matches the orientation of the other cameras.
+- **Flip Horizontally:** if true, raw camera images from this camera will be flipped horizontally for display and saving to file so that it matches the orientation of the other cameras.
 
-- **photonsPerCount:** *photoelectrons per ADU (arbitrary camera readout units) conversion factor, as specified in the data sheet from the camera manufacturer. There is one entry in the array per camera readout mode. This is only used for metadata to assist in automating downstream analysis (e.g., in SPARTAN). This field can be left empty for Hamamatsu cameras because the conversion factors can be read from the camera.
+- **photonsPerCount:** photoelectrons per ADU (arbitrary camera readout units) conversion factor, as specified in the data sheet from the camera manufacturer. There is one entry in the array per camera readout mode. This is only used for metadata to assist in automating downstream analysis (e.g., in SPARTAN). This field can be left empty for Hamamatsu cameras because the conversion factors can be read from the camera.
 
 - **Wavelength:** wavelength in nanometers of the laser that is used to directly excite fluorophores in this spectral band. For integration with SPARTAN, it is important that this value matches the shutter/laser wavelength configured above.
 

@@ -10,7 +10,7 @@ cameras. It is designed to be used with the SPARTAN data analysis software.
 Please cite the following paper if you use FLASH in your laboratory:
 
 Juette MF, Terry DS, Wasserman MR, Altman RB, Zhou Z, Zhao H, Blanchard SC. Single-molecule imaging
-of non-equilibrium molecular ensembles on the millisecond timescale. *Nat**ure** Methods*. 2016
+of non-equilibrium molecular ensembles on the millisecond timescale. *Nature Methods*. 2016
 Apr;13(4):341-4. doi: 10.1038/nmeth.3769. Epub 2016 Feb 15.
 
 This software is intended only for research use in an academic setting. For licensing information,

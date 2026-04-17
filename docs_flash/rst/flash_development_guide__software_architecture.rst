@@ -8,23 +8,22 @@ Subsystems
 
 FLASH is divided into five subsystems with distinct roles:
 
-- **User Interface (UI)**** layer**. These actors handle all user interactions, communicating this information as messages to the *Application* actor. There is never direct interaction between UI and hardware actors. The UI does not maintain state – it simply mirrors the state of the Application, as indicated by status messages. The UI checks the validity of input parameters only for user convenience; the *Application* actor performs any critical parameter checks.
+- **User Interface (UI) layer**. These actors handle all user interactions, communicating this information as messages to the *Application* actor. There is never direct interaction between UI and hardware actors. The UI does not maintain state – it simply mirrors the state of the Application, as indicated by status messages. The UI checks the validity of input parameters only for user convenience; the *Application* actor performs any critical parameter checks.
 
 - *Main Window*: primary user interface for FLASH and provides most program control.
 
 - *Viewer*: displays frame data, streaming status, and live analysis (e.g., particle counts).
 
-- **Application**** layer**. This layer includes only one actor: *Application*. It is the core system that loads the instrument configuration, controls the lifecycle of all the other Actors, and translates high-level commands from the UI into a specific sequence of device commands (HAL methods), after verifying input parameters. The Application maintains the state of the program.
+- **Application layer**. This layer includes only one actor: *Application*. It is the core system that loads the instrument configuration, controls the lifecycle of all the other Actors, and translates high-level commands from the UI into a specific sequence of device commands (HAL methods), after verifying input parameters. The Application maintains the state of the program.
 
 - *AutomationContext* is a class within the application layer that provides methods for translating a *P**rotocol* (parameters from the UI that describe a movie series) into a run plan (array of actions and associated parameters to be sent to the *Application* actor in sequence). This class keeps track of the current step in the run, freeing up the *Application* actor to only consider the immediate step being executed.
 
-- **Hardware abstraction layer**** (HAL)**. Classes in this layer provides abstract interfaces for mapping general device actions (like “start streaming”) into device-specific commands. Each class in this layer encapsulates the functionality of a device type (*Camera*, *Laser*, etc.). The public methods of the class are called by the Application actor via a message, describing a high-level command. The public method then calls protected methods in the same class that abstract device-specific commands (such as “prepare camera”). These protected methods (“hooks”) are overridden by device-specific classes so that dynamic dispatch can be used to call the correct device-specific class. HAL classes do not maintain state.
+- **Hardware abstraction layer** (HAL). Classes in this layer provides abstract interfaces for mapping general device actions (like “start streaming”) into device-specific commands. Each class in this layer encapsulates the functionality of a device type (*Camera*, *Laser*, etc.). The public methods of the class are called by the Application actor via a message, describing a high-level command. The public method then calls protected methods in the same class that abstract device-specific commands (such as “prepare camera”). These protected methods (“hooks”) are overridden by device-specific classes so that dynamic dispatch can be used to call the correct device-specific class. HAL classes do not maintain state.
 
-- **Device**** layer**. Actors in this layer all inherit from a specific HAL class, overriding methods to translate a high-level device action into device-specific code (such as DLL calls). These actors independently monitor the state of device and report this information, including errors, as messages back to the Application actor. When several physical devices are represented by a single driver/API (such as cameras), these should be supported by a single underlying actor to avoid race conditions.
+- **Device layer**. Actors in this layer all inherit from a specific HAL class, overriding methods to translate a high-level device action into device-specific code (such as DLL calls). These actors independently monitor the state of device and report this information, including errors, as messages back to the Application actor. When several physical devices are represented by a single driver/API (such as cameras), these should be supported by a single underlying actor to avoid race conditions.
 
-- **Service****s**. These classes asynchronously execute computationally intensive tasks, such as saving frame data to disk and live image analysis, the results of which are not immediately needed by the application.
+- **Services**. These classes asynchronously execute computationally intensive tasks, such as saving frame data to disk and live image analysis, the results of which are not immediately needed by the application.
 
-**
 
 Class Hierarchy
 ---------------
@@ -128,7 +127,7 @@ on disk, but is very similar:
 
 - **Hardware**
 
-- **Hardware Abstraction Layer:**abstract classes defining interfaces for each device type
+- **Hardware Abstraction Layer:** abstract classes defining interfaces for each device type
 
 - **Hardware Devices:** concrete child classes implementing support for specific devices
 
@@ -136,15 +135,15 @@ on disk, but is very similar:
 
 - **Resources**
 
-- **Config:**JSON files defining instrument configurations.
+- **Config:** JSON files defining instrument configurations.
 
 - **Dependencies**: external libraries used by FLASH.
 
 - **dll**: binary dependencies
 
-- **GLOBAL****: **global variables (to be removed in a future version)
+- **GLOBAL**: global variables (to be removed in a future version)
 
-- *GLOBAL** Experiment Metadata.vi:* used for collecting device settings in real time to be used when saving the metadata for output TIFF files.
+- *GLOBAL Experiment Metadata.vi:* used for collecting device settings in real time to be used when saving the metadata for output TIFF files.
 
 - *GLOBAL Time-Critical.vi*: used for data sharing of a small number of variables such as frame data to reduce message-passing overhead.
 
@@ -156,11 +155,11 @@ on disk, but is very similar:
 
 - **docs**: documentation, user guide, dev guide, release notes, etc.
 
-- **Services **(Particle Counter, Timer actors)
+- **Services** (Particle Counter, Timer actors)
 
-- **User Interface **(Main Window, Viewer, Splash Screen actors)
+- **User Interface** (Main Window, Viewer, Splash Screen actors)
 
-- **Dialogs:**modal dialog VI’s used by the Main Window actor.
+- **Dialogs:** modal dialog VI’s used by the Main Window actor.
 
 
 Configuration Files
