@@ -1,0 +1,4 @@
+# docs_flash — Sphinx + docx conversion (see repo root import_doc*.py)
+python-docx>=0.8.11
+sphinx>=4.0
+sphinx-rtd-theme

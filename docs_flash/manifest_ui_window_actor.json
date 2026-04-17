@@ -1,0 +1,13 @@
+{
+  "doc_key": "ui_window_actor",
+  "docx": "/home/zkilic/Downloads/FLASH_doc/FLASH Documentation 20260417/Creating a New UI Window Actor.docx",
+  "split_level": 1,
+  "files": [
+    {
+      "stem": "ui_window_actor__preamble",
+      "title": "_preamble",
+      "path": "rst/ui_window_actor__preamble.rst"
+    }
+  ],
+  "static_web": "_static/ui_window_actor"
+}

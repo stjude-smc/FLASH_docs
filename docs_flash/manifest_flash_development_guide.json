@@ -1,0 +1,63 @@
+{
+  "doc_key": "flash_development_guide",
+  "docx": "/home/zkilic/Downloads/FLASH_doc/FLASH Documentation 20260417/FLASH Development Guide.docx",
+  "split_level": 1,
+  "files": [
+    {
+      "stem": "flash_development_guide__flash_development_guide",
+      "title": "FLASH Development Guide",
+      "path": "rst/flash_development_guide__flash_development_guide.rst"
+    },
+    {
+      "stem": "flash_development_guide__introduction",
+      "title": "Introduction",
+      "path": "rst/flash_development_guide__introduction.rst"
+    },
+    {
+      "stem": "flash_development_guide__prerequisites",
+      "title": "Prerequisites",
+      "path": "rst/flash_development_guide__prerequisites.rst"
+    },
+    {
+      "stem": "flash_development_guide__software_architecture",
+      "title": "Software Architecture",
+      "path": "rst/flash_development_guide__software_architecture.rst"
+    },
+    {
+      "stem": "flash_development_guide__execution_walkthrough",
+      "title": "Execution Walkthrough",
+      "path": "rst/flash_development_guide__execution_walkthrough.rst"
+    },
+    {
+      "stem": "flash_development_guide__adding_support_for_new_devices",
+      "title": "Adding support for new devices",
+      "path": "rst/flash_development_guide__adding_support_for_new_devices.rst"
+    },
+    {
+      "stem": "flash_development_guide__compiling_an_executable",
+      "title": "Compiling an executable",
+      "path": "rst/flash_development_guide__compiling_an_executable.rst"
+    },
+    {
+      "stem": "flash_development_guide__c_libraries",
+      "title": "C++ libraries",
+      "path": "rst/flash_development_guide__c_libraries.rst"
+    },
+    {
+      "stem": "flash_development_guide__team_development_and_other_tips",
+      "title": "Team Development and Other Tips",
+      "path": "rst/flash_development_guide__team_development_and_other_tips.rst"
+    },
+    {
+      "stem": "flash_development_guide__troubleshooting",
+      "title": "Troubleshooting",
+      "path": "rst/flash_development_guide__troubleshooting.rst"
+    },
+    {
+      "stem": "flash_development_guide__style_guide",
+      "title": "Style Guide",
+      "path": "rst/flash_development_guide__style_guide.rst"
+    }
+  ],
+  "static_web": "_static/flash_development_guide"
+}

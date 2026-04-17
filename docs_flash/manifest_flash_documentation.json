@@ -1,0 +1,68 @@
+{
+  "doc_key": "flash_documentation",
+  "docx": "/home/zkilic/Downloads/FLASH_doc/FLASH Documentation 20260417/FLASH Documentation.docx",
+  "split_level": 1,
+  "files": [
+    {
+      "stem": "flash_documentation__flash_documentation",
+      "title": "FLASH Documentation",
+      "path": "rst/flash_documentation__flash_documentation.rst"
+    },
+    {
+      "stem": "flash_documentation__introduction",
+      "title": "Introduction",
+      "path": "rst/flash_documentation__introduction.rst"
+    },
+    {
+      "stem": "flash_documentation__untitled",
+      "title": "Untitled",
+      "path": "rst/flash_documentation__untitled.rst"
+    },
+    {
+      "stem": "flash_documentation__recommended_hardware",
+      "title": "Recommended Hardware",
+      "path": "rst/flash_documentation__recommended_hardware.rst"
+    },
+    {
+      "stem": "flash_documentation__supported_hardware",
+      "title": "Supported Hardware",
+      "path": "rst/flash_documentation__supported_hardware.rst"
+    },
+    {
+      "stem": "flash_documentation__hardware_setup_guide",
+      "title": "Hardware Setup Guide",
+      "path": "rst/flash_documentation__hardware_setup_guide.rst"
+    },
+    {
+      "stem": "flash_documentation__installation_stand_alone_executable_version",
+      "title": "Installation (stand-alone executable version)",
+      "path": "rst/flash_documentation__installation_stand_alone_executable_version.rst"
+    },
+    {
+      "stem": "flash_documentation__configuration",
+      "title": "Configuration",
+      "path": "rst/flash_documentation__configuration.rst"
+    },
+    {
+      "stem": "flash_documentation__using_flash",
+      "title": "Using FLASH",
+      "path": "rst/flash_documentation__using_flash.rst"
+    },
+    {
+      "stem": "flash_documentation__movie_file_format",
+      "title": "Movie File Format",
+      "path": "rst/flash_documentation__movie_file_format.rst"
+    },
+    {
+      "stem": "flash_documentation__troubleshooting",
+      "title": "Troubleshooting",
+      "path": "rst/flash_documentation__troubleshooting.rst"
+    },
+    {
+      "stem": "flash_documentation__known_issues_and_limitations",
+      "title": "Known Issues and Limitations",
+      "path": "rst/flash_documentation__known_issues_and_limitations.rst"
+    }
+  ],
+  "static_web": "_static/flash_documentation"
+}
