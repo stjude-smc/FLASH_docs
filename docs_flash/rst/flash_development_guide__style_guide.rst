@@ -26,7 +26,7 @@ This section describes programming style to help keep the code base consistent a
 
 - Center terminals should not be used as outputs.
 
-- **Align** VI nodes ****from left to right **so that the error wire is straight from input to output. This helps keep program flow clear and linear. Use the error wire as the primary means of controlling parallelization within one VI.
+- **Align** VI nodes from left to right so that the error wire is straight from input to output. This helps keep program flow clear and linear. Use the error wire as the primary means of controlling parallelization within one VI.
 
 
 .. figure:: ../_static/flash_development_guide/img_flash_development_guide_0002.png

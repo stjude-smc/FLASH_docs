@@ -11,6 +11,12 @@ FLASH.vi for source code version). Select the appropriate configuration (see abo
 After starting, the Main Window will open. The Main Window is used for controlling all devices and
 collecting data:
 
+
+.. figure:: ../_static/flash_documentation/MainWindow.PNG
+   :name: fig-flash_main_window-1
+   :alt: MainWindow.png
+
+
 **Microscope Settings**
 
 - **Detection**: specifies the microscope light path, including the filter set and imaging port.

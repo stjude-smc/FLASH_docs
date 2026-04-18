@@ -11,12 +11,13 @@ box. Clicking “Save” on this dialog will overwrite the selected configuratio
 will create a new file. To remove a configuration, simply delete the corresponding file in the
 Config folder. To rename a configuration, simply rename that configuration file on disk.
 
+.. figure:: ../_static/flash_documentation/Configuration_part0.PNG
+   :name: fig-flash_documentation-1
+   :alt: Configuration_part0.png
 
-.. list-table::
-
-   * - 
-     - 
-
+.. figure:: ../_static/flash_documentation/Configuration.PNG
+   :name: fig-flash_documentation-2
+   :alt: Configuration.png
 Below is a list of the configuration options:
 
 - **DAQ Configuration**
