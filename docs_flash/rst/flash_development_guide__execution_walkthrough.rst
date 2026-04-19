@@ -12,7 +12,7 @@ Below are the steps executed on successful startup:
 
 - **FLASH.vi** launches the *Application* as root actor.
 
-- **Application/Startup.vi** launches the* Splash Screen* Actor.
+- **Application/Startup.vi** launches the *Splash Screen* Actor.
 
 - **Application/Load Configuration.vi** dialog allows user to select the hardware configuration, saving this information in the *Application* private data. The “Create Hardware Configuration UI.vi” dialog is used for modifying an existing configuration or creating a new one.
 
@@ -89,7 +89,7 @@ This section describes events after user clicks the “Show Live” button in *M
 
 - *Main Window* sends *Start Live Msg* to *Application* with current acquisition parameters.
 
-- **Application/Start Live.vi** validates settings, sends *Start Live Mode Msg* to *Camera*, *Start Streaming Msg *to *Sync Device*, *Application Mode Change Msg* to *Main Window*, and *Set Visibility Msg *to *Live Viewer*.
+- **Application/Start Live.vi** validates settings, sends *Start Live Mode Msg* to *Camera*, *Start Streaming Msg* to *Sync Device*, *Application Mode Change Msg* to *Main Window*, and *Set Visibility Msg *to *Live Viewer*.
 
 - **<Camera>/Start Live Mode.vi** configures camera(s) for frame acquisition.
 

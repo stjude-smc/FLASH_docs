@@ -154,11 +154,11 @@ File Structure
 
     .. warning::
 
-    - **GLOBAL**: global variables (to be removed in a future version)
+        - **GLOBAL**: global variables (to be removed in a future version)
 
-    - **GLOBAL Experiment Metadata.vi:** used for collecting device settings in real time to be used when saving the metadata for output TIFF files.
+        - **GLOBAL Experiment Metadata.vi:** used for collecting device settings in real time to be used when saving the metadata for output TIFF files.
 
-    - **GLOBAL Time-Critical.vi**: used for data sharing of a small number of variables such as frame data to reduce message-passing overhead.
+        - **GLOBAL Time-Critical.vi**: used for data sharing of a small number of variables such as frame data to reduce message-passing overhead.
 
     - **Helper VIs**: stand-alone functions that are used throughout the codebase. Any VI’s that have a functional scope within one module should be moved into that lvlib instead.
 

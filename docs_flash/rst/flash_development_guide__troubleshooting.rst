@@ -132,12 +132,12 @@ Log Files
    well as saved to disk in real time at “C:\\temp\\FLASH.log”, which is particularly useful in the
    case of program crashes.
    
-   17:20:53.96 -- Set filter=1, path=2
+    - 17:20:53.96 -- Set filter=1, path=2
    
    DCAM, if used, logs commands, return values, and any error codes in C:\\temp\\tmlog.txt.
    
-   1.944 TMCC_GETAREA_40 -> i=0
+    - 1.944 TMCC_GETAREA_40 -> i=0
    
-   1.953 TMCC_GETAREA_40 OK hov=0 vov=0 hwv=2048 vwv=2048
+    - 1.953 TMCC_GETAREA_40 OK hov=0 vov=0 hwv=2048 vwv=2048
    
    dcimg2tiff logs any errors in C:\\temp\\dcimg2tiff.log.

@@ -113,7 +113,7 @@
 <p>Below are the steps executed on successful startup:</p>
 <ul>
 <li><p><strong>FLASH.vi</strong> launches the <em>Application</em> as root actor.</p></li>
-<li><p><strong>Application/Startup.vi</strong> launches the* Splash Screen* Actor.</p></li>
+<li><p><strong>Application/Startup.vi</strong> launches the <em>Splash Screen</em> Actor.</p></li>
 <li><p><strong>Application/Load Configuration.vi</strong> dialog allows user to select the hardware configuration, saving this information in the <em>Application</em> private data. The “Create Hardware Configuration UI.vi” dialog is used for modifying an existing configuration or creating a new one.</p></li>
 <li><p><strong>Application/Init HW.vi</strong> initialize configured hardware:</p>
 <blockquote>
@@ -171,7 +171,7 @@ does not follow this pattern.</p>
 <p>This section describes events after user clicks the “Show Live” button in <em>Main Window</em>:</p>
 <ul class="simple">
 <li><p><em>Main Window</em> sends <em>Start Live Msg</em> to <em>Application</em> with current acquisition parameters.</p></li>
-<li><p><strong>Application/Start Live.vi</strong> validates settings, sends <em>Start Live Mode Msg</em> to <em>Camera</em>, <em>Start Streaming Msg *to *Sync Device</em>, <em>Application Mode Change Msg</em> to <em>Main Window</em>, and <em>Set Visibility Msg *to *Live Viewer</em>.</p></li>
+<li><p><strong>Application/Start Live.vi</strong> validates settings, sends <em>Start Live Mode Msg</em> to <em>Camera</em>, <em>Start Streaming Msg</em> to <em>Sync Device</em>, <em>Application Mode Change Msg</em> to <em>Main Window</em>, and <em>Set Visibility Msg *to *Live Viewer</em>.</p></li>
 <li><p><strong>&lt;Camera&gt;/Start Live Mode.vi</strong> configures camera(s) for frame acquisition.</p></li>
 <li><p><strong>&lt;Sync Device&gt;/Start Streaming.vi</strong> starts TTL pulse sequence to other devices.</p></li>
 <li><p><strong>&lt;Camera&gt;/Get Most Recent Frame.vi</strong> saves the most recently acquired frame and index to the “Live Frame” and “Current Frame” global variables, respectively, and sends <em>New Frame Notify Msg</em> to <em>Application</em>.</p></li>

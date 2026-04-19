@@ -42,9 +42,9 @@ guide of how each *Device* class would be updated to support a new device type.
 
 Creating a New Device Actor
 ---------------------------
-
-Below is the general process for creating a new *Device* actor, inheriting from an existing HAL
-interface class, such as *Camera*, *Laser*, *Sync Device*, etc.
+.. tip::
+    Below is the general process for creating a new *Device* actor, inheriting from an existing HAL
+    interface class, such as *Camera*, *Laser*, *Sync Device*, etc.
 
 - Before you begin, create a stand-alone test VI to implement all planning functions of the target device driver. It is easier to troubleshoot errors and explore device quirks outside of the complexity of FLASH and the Actor Framework. If implemented as a series of helper VIs, these can be re-used in the new actor’s methods. Be sure to fully test all planned workflows this way.
 

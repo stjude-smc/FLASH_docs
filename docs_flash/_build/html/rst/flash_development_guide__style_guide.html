@@ -101,38 +101,36 @@
   <section id="style-guide">
 <span id="flash-development-guide-style-guide"></span><h1>Style Guide<a class="headerlink" href="#style-guide" title="Link to this heading"></a></h1>
 <p>This section describes programming style to help keep the code base consistent and “readable”.</p>
-<ul class="simple">
+<ul>
 <li><p><strong>Wire diagrams</strong> should fit within one screen to avoid scrolling. To achieve this, avoid unnecessary white space, keep the scope of each VI to one well-defined purpose, and extract code blocks to new helper VI’s where it makes sense. This also helps to minimize chances of merge conflicts in team development.</p></li>
-<li><p><strong>Terminals</strong> should use a consistent 4x2x4 pattern, with inputs on the left and outputs on the right. Avoid wiring in more than 4 inputs – use clusters instead.</p></li>
+<li><p><strong>Terminals</strong> should use a consistent 4x2x4 pattern, with inputs on the left and outputs on the right. Avoid wiring in more than 4 inputs – use clusters instead.</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Top left terminal is the primary input and top right is primary output. This is usually an object wire (for class methods) or resource handle (for file access, etc.).</p></li>
 </ul>
-<figure class="align-default" id="fig-flash-development-guide-1">
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-default">
 <img alt="img_flash_development_guide_0001.png" src="../_images/img_flash_development_guide_0001.png" />
 </figure>
 <ul class="simple">
-<li><p>The bottom left should be error in and bottom right error out.</p></li>
-<li><p>Middle left terminals are for input parameters.</p></li>
-<li><p>Middle right terminals are outputs, such as results of a method call.</p></li>
-<li><p>Center terminals are often used for enum inputs because this allows long names to above or below the VI node in the block diagram to save space.</p></li>
-<li><p>Center terminals should not be used as outputs.</p></li>
 <li><p><strong>Align</strong> VI nodes from left to right so that the error wire is straight from input to output. This helps keep program flow clear and linear. Use the error wire as the primary means of controlling parallelization within one VI.</p></li>
 </ul>
 <figure class="align-default" id="fig-flash-development-guide-2">
-<img alt="Keep icons simple, with a top bar to identify the module/class and the middle part giving a brief text description of the function. Avoid custom icon images. An exception are HAL override methods (“hooks”), which include a downward blue arrow." src="../_images/img_flash_development_guide_0002.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Keep icons simple, with a top bar to identify the module/class and the middle part giving a brief text description of the function. Avoid custom icon images. An exception are HAL override methods (“hooks”), which include a downward blue arrow.</span><a class="headerlink" href="#fig-flash-development-guide-2" title="Link to this image"></a></p>
-</figcaption>
+<img alt="img_flash_development_guide_0002.png" src="../_images/img_flash_development_guide_0002.png" />
 </figure>
 <ul class="simple">
+<li><p><strong>Keep icons simple</strong>, with a top bar to identify the module/class and the middle part giving a brief text description of the function. Avoid custom icon images. An exception are HAL override methods (“hooks”), which include a downward blue arrow.</p></li>
 <li><p><strong>Comments</strong> on wire diagrams should describe obscure constant values, algorithms, and document assumptions.</p></li>
 <li><p><strong>VI descriptions</strong> should give a one sentence summary of the purpose of the function and describe each input and output terminal.</p></li>
+<li><p><strong>Naming:</strong> method names should be verbs, class member names should be nouns, words should be separated by spaces, and each word should be capitalized.</p></li>
+<li><p><strong>Use virtual folders</strong> to organize class methods and set access scope explicitly for each virtual folder. See an example at right. Outside of classes, use auto-populating virtual folders so that the project and disk organization matches.</p></li>
 </ul>
 <figure class="align-default" id="fig-flash-development-guide-3">
 <img alt="img_flash_development_guide_0003.png" src="../_images/img_flash_development_guide_0003.png" />
 </figure>
 <ul class="simple">
-<li><p><strong>Naming:</strong> method names should be verbs, class member names should be nouns, words should be separated by spaces, and each word should be capitalized.</p></li>
-<li><p><strong>Use virtual folders</strong> to organize class methods and set access scope explicitly for each virtual folder. See an example at right. Outside of classes, use auto-populating virtual folders so that the project and disk organization matches.</p></li>
 <li><p>Helper VIs, typedefs, and other resources should be owned by the lvlib that uses them and located in the same folder on disk. Use the Resources folder only sharing across modules.</p></li>
 <li><p>Use the built-in Actor Framework “Create Message” and “Rescript this message” macros to create and update messages. Do not manually create/modify them.</p></li>
 </ul>

@@ -261,10 +261,15 @@ on disk, but is very similar:</p>
 <li><p><strong>Dependencies</strong>: external libraries used by FLASH.</p></li>
 <li><p><strong>dll</strong>: binary dependencies</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <ul class="simple">
 <li><p><strong>GLOBAL</strong>: global variables (to be removed in a future version)</p></li>
 <li><p><strong>GLOBAL Experiment Metadata.vi:</strong> used for collecting device settings in real time to be used when saving the metadata for output TIFF files.</p></li>
 <li><p><strong>GLOBAL Time-Critical.vi</strong>: used for data sharing of a small number of variables such as frame data to reduce message-passing overhead.</p></li>
+</ul>
+</div>
+<ul class="simple">
 <li><p><strong>Helper VIs</strong>: stand-alone functions that are used throughout the codebase. Any VI’s that have a functional scope within one module should be moved into that lvlib instead.</p></li>
 <li><p><strong>Images</strong>: artwork and icons used for compiling the application.</p></li>
 <li><p><strong>Testing</strong>: VI’s used to isolate specific actors or modules for testing.</p></li>
