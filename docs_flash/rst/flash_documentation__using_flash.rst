@@ -33,9 +33,9 @@ collecting data:
 
 - **Exposure (ms):** time that the camera is exposing and the laser shutters are open within each frame interval. In continuous illumination, this is the same as frame interval.
 
-- **Acquisition Period****:** time period between the start of each frame.
+- **Acquisition Period**: time period between the start of each frame.
 
-- **Illumination****:** select the imaging mode (Continuous, ALEX, or Stroboscopic). See the section below for a more complete description of these options.
+- **Illumination**: select the imaging mode (Continuous, ALEX, or Stroboscopic). See the section below for a more complete description of these options.
 
 - **Live Exposure (ms):** if checked, “Show Live” will use this exposure time instead – the “Exposure (ms)” field is always used for “Stream Acquisition”. This can be useful for manually focusing at low before taking each new movie.
 
@@ -73,7 +73,7 @@ software stage limits. The large red circle shows the current stage position.
 
 - **Multi-lane series:** acquire several movies, moving first across fields (Y direction) and then across lanes (X direction), with files numbered like this: “…_A01.tif”. Letters represent fields (X) and numbers are lanes (Y).
 
-- **Sweep **Parameter**: acquires several movies varying the selected parameter(s), such as laser power, through a specified series of values. Files are numbered according to the selected parameter(s), e.g., “…_100mW_000.tif”.
+- **Sweep Parameter**: acquires several movies varying the selected parameter(s), such as laser power, through a specified series of values. Files are numbered according to the selected parameter(s), e.g., “…_100mW_000.tif”.
 
 - **Injection Countdown**: at the start of each stream acquisition, a timer appears that counts down to zero to mark the moment shutters open and the first frame is exposing. This mode is useful for timing manual injections with the start of acquisition.
 
@@ -99,9 +99,9 @@ Settings and commands that are less commonly used, a few of which are described 
 
 - **Active Cameras:** select a subset of connected cameras to be used in Live and Stream Acquisition modes.
 
-- **Fluidics ****trigger:** at this frame number, a one-frame TTL pulse will be sent to trigger an external device. Set to zero to disable.
+- **Fluidics trigger:** at this frame number, a one-frame TTL pulse will be sent to trigger an external device. Set to zero to disable.
 
-- **Calibrate ****Polarizer:** initiates a series of polarizer motor movements and power meter measurements to determine the calibration parameters to translate power settings to polarizer angles. These values must be manually entered into the configuration file; it is not automatically updated.
+- **Calibrate Polarizer:** initiates a series of polarizer motor movements and power meter measurements to determine the calibration parameters to translate power settings to polarizer angles. These values must be manually entered into the configuration file; it is not automatically updated.
 
 - **Forward step/lane separation**: manually adjust the stage movement distances. These values are only kept during the current session. You must edit the configuration file to make any changes permanent.
 
@@ -122,7 +122,7 @@ This tab will be visible only if an autosampler is configured and connected.
 
 - **Manual control:** buttons directly execute basic movements on the device. The parameter fields are not updated as the device moves.
 
-- **Autosampler ****Status:** displays the current positions of the various components of the device, including valve positions and needle arm position.
+- **Autosampler Status:** displays the current positions of the various components of the device, including valve positions and needle arm position.
 
 Show Live
 ---------
@@ -131,7 +131,6 @@ To see acquired images from the cameras without saving any data, click the “Sh
 main window. A new window will appear showing the frame data from all active cameras. The Live
 Viewer window includes several controls at the top. These settings only affect the display of the
 pixel data and have no effect on the acquired movies.
-
 
 .. figure:: ../_static/flash_documentation/img_flash_documentation_0003.png
    :name: fig-flash_documentation-3
@@ -147,7 +146,7 @@ pixel data and have no effect on the acquired movies.
 
 - **Histogram:** gray bar chart shows the pixel intensities of the acquired images from all cameras. The colorful plot shows how these values are translated to colors in the viewer. The ends of this plot can be moved to adjust the minimum and maximum values the mapping of pixel values onto the color scale (if “Auto Scale” is not selected). Typically the lower end is set on the large peak corresponding to background pixels, while the upper end is set so that the molecule pixel intensities are clearly visible but not oversaturated, especially when adjusting the focus.
 
-- **Alignment****:** if checked, the Live Viewer will display the image of one camera subtracted from another to adjust their relative alignment. The scaling parameter is useful when two spectral bands have very different intensities and is most often used with the far-red (Cy7) channel.
+- **Alignment**: if checked, the Live Viewer will display the image of one camera subtracted from another to adjust their relative alignment. The scaling parameter is useful when two spectral bands have very different intensities and is most often used with the far-red (Cy7) channel.
 
 - **Status Bar:** displays the number of frames recorded, a progress bar for the recording, and an estimated number of detected particles in the first channel (using an algorithm similar to the one used in SPARTAN).
 

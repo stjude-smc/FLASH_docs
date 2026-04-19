@@ -18,6 +18,7 @@ Config folder. To rename a configuration, simply rename that configuration file 
 .. figure:: ../_static/flash_documentation/Configuration.PNG
    :name: fig-flash_documentation-2
    :alt: Configuration.png
+   
 Below is a list of the configuration options:
 
 - **DAQ Configuration**

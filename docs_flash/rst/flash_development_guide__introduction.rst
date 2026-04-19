@@ -6,7 +6,7 @@ Introduction
 FLASH is a microscope instrument control and data acquisition software tool specialized for
 widefield single-molecule fluorescence imaging, especially single-molecule FRET, written to be
 highly modular and parallelized to support new devices, workflows, and user interfaces relatively
-easily. Read “FLASH Documentation.pdf” to review the normal functioning of the program.
+easily. Check the “FLASH Documentation” section to review the normal functioning of the program.
 
 The purpose of this document is to provide an overview of the software architecture, implementation
 strategies, team development tips, and style guidelines. Because FLASH is written primarily in

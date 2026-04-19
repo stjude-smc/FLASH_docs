@@ -3,171 +3,200 @@
 Troubleshooting
 ===============
 
-**Synchronization**
+.. warning::
 
-Be sure to verify synchronization of cameras before using an instrument for routine experiments.
-Connect the “trigger/expose out” port of each camera to an oscilloscope and verify that the rising
-edges are synchronized within ~1 ms. Check this at varying exposure times between 200 ms and 2 ms.
-With the NI DAQ and exposure times faster than 2 ms, the cameras are internally triggered and may
-lose synchronization over time.
+   **Synchronization**
 
-**How do I determine the virtual addresses of the ports on the **NI DAQ?**
+   Be sure to verify synchronization of cameras before using an instrument for routine experiments.
+   Connect the “trigger/expose out” port of each camera to an oscilloscope and verify that the rising
+   edges are synchronized within ~1 ms. Check this at varying exposure times between 200 ms and 2 ms.
+   With the NI DAQ and exposure times faster than 2 ms, the cameras are internally triggered and may
+   lose synchronization over time.
 
-Check the documentation for your DAQ and use the NI MAX utility. NI DAQs often include helpful
-stickers. If in doubt, use the NI Test Panels utility (accessible from NI Device Manager) to set the
-line voltages and test with an oscilloscope or volt meter.
+.. warning::
 
-**Missing DLLs**
+   **How do I determine the virtual addresses of the ports on the NI DAQ?**
 
-FLASH works with a set of drivers for common microscope hardware. For licensing reasons, not all of
-these can be packaged together with the software and must be installed by the user. Check the
-installation instructions to verify all required software is installed. If the problem persists:
+   Check the documentation for your DAQ and use the NI MAX utility. NI DAQs often include helpful
+   stickers. If in doubt, use the NI Test Panels utility (accessible from NI Device Manager) to set the
+   line voltages and test with an oscilloscope or volt meter.
 
-- Ti2_Mic_Driver.dll: install Nikon Ti2 SDK. Then copy this file from “C:\\Program Files\\Nikon\\Ti2-SDK\\bin\\” into FLASH’s dll folder.
+.. warning::
 
-- tmcamcon.dll: install the Hamamatsu Video Capture library.
+   **Missing DLLs**
 
-- dcampapi.dll or dcimgapi.dll: install DCAM (camera drivers).
+   FLASH works with a set of drivers for common microscope hardware. For licensing reasons, not all of
+   these can be packaged together with the software and must be installed by the user. Check the
+   installation instructions to verify all required software is installed. If the problem persists:
 
-- Thorlabs….dll: install the Thorlabs Kinesis library.
+   - Ti2_Mic_Driver.dll: install Nikon Ti2 SDK. Then copy this file from “C:\\Program Files\\Nikon\\Ti2-SDK\\bin\\” into FLASH’s dll folder.
 
-- nilvaiu.dll: install the National Instruments DAQmx software.
+   - tmcamcon.dll: install the Hamamatsu Video Capture library.
 
-**Error -1073807202: A Code Library Required by NI-VISA Could Not Be Located**
+   - dcampapi.dll or dcimgapi.dll: install DCAM (camera drivers).
 
-Although it should have come with DAQmx, you may need to install the NI-VISA driver.
+   - Thorlabs….dll: install the Thorlabs Kinesis library.
 
-`https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#306119
-<https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html>`_
+   - nilvaiu.dll: install the National Instruments DAQmx software.
 
-**Failed load to configuration**
+.. warning::
 
-Your configuration file is invalid. We recommend against manually editing these files as this is
-highly error prone. Use the configuration dialog in FLASH to edit these files instead.
+   **Error -1073807202: A Code Library Required by NI-VISA Could Not Be Located**
 
-**Microscope is not detected** (Nikon Ti2)
+   Although it should have come with DAQmx, you may need to install the NI-VISA driver.
 
-You must install the Nikon Ti2 SDK in order for the microscope to be detected. Verify the USB
-connection and the device shows up in Windows Device Manager.
+   `https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#306119
+   <https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html>`_
 
-**“No cameras detected!” error on startup.** (Hamamatsu cameras)
+.. warning::
 
-Verify the cameras are turned on and have completed their startup procedure (status lights not
-flashing) before starting FLASH. If no lights come on at all, check the power connection. With the
-Fusion camera, the red lights near the coaxial data ports never stop flashing, it suggests the
-camera could not establish a connection to the computer; check your USB or coaxial data connection.
-Finally, double check the configuration file to make sure the serial numbers exactly match. The DCAM
-Configurator tool can be helpful for this task.
+   **Failed load to configuration**
 
-In some cases, the cameras take a long time to initialize and FLASH times out. It’s worth trying a
-few times before giving up.
+   Your configuration file is invalid. We recommend against manually editing these files as this is
+   highly error prone. Use the configuration dialog in FLASH to edit these files instead.
 
-If you are using the compiled version but also have LabVIEW and the Hamamatsu Video Capture (HVC)
-library installed, there may be a conflict with the copy of tmcamcon.dll included with FLASH and the
-version installed in C:\\Windows\\System32. To resolve this problem, remove the copy of tmcamcon.dll
-from the FLASH directory.
+.. warning::
 
-If all else fails, use software provided with the camera manufacturer such as HCImage and work with
-the camera vendor to troubleshoot the issue.
+   **Microscope is not detected** (Nikon Ti2)
 
-**“Invalid camera model”** (Hamamatsu cameras)
+   You must install the Nikon Ti2 SDK in order for the microscope to be detected. Verify the USB
+   connection and the device shows up in Windows Device Manager.
 
-Only a limited number of Hamamatsu camera models are currently supported. Please check the
-“Supported Hardware” section above. For the source code version, a new model number can be added to
-the case structure in the file “Hardware\\Hamamatsu Camera\\Max Lines Auto.vi”. For the stand-alone
-version, please contact us with the camera model number.
+.. warning::
 
-**One of my cameras has an inverted** or rotated image**** relative to the others**
+   **“No cameras detected!” error on startup.** (Hamamatsu cameras)
 
-You may need to change the Configuration settings for this camera to set one of the “flip” settings
-to “true”. If it is rotated, this must be fixed by physically rotating the camera so that it is
-aligned with the others.
+   Verify the cameras are turned on and have completed their startup procedure (status lights not
+   flashing) before starting FLASH. If no lights come on at all, check the power connection. With the
+   Fusion camera, the red lights near the coaxial data ports never stop flashing, it suggests the
+   camera could not establish a connection to the computer; check your USB or coaxial data connection.
+   Finally, double check the configuration file to make sure the serial numbers exactly match. The DCAM
+   Configurator tool can be helpful for this task.
 
-**I get errors about the lasers**
+   In some cases, the cameras take a long time to initialize and FLASH times out. It’s worth trying a
+   few times before giving up.
 
-FLASH will not start if any hardware in the configuration file is not found or connecting to it
-failed. Either change the device type to “Disabled” or delete the Laser Configuration entry
-corresponding to the device.
+   If you are using the compiled version but also have LabVIEW and the Hamamatsu Video Capture (HVC)
+   library installed, there may be a conflict with the copy of tmcamcon.dll included with FLASH and the
+   version installed in C:\\Windows\\System32. To resolve this problem, remove the copy of tmcamcon.dll
+   from the FLASH directory.
 
-**Lasers are on and shutters are** open but I see nothing in the cameras/eyepieces**
+   If all else fails, use software provided with the camera manufacturer such as HCImage and work with
+   the camera vendor to troubleshoot the issue.
 
-First, manually select filter and output port to eyepieces on the microscope body or remote control
-pad and verify you get the expected signal. If this does not work, the problem may be with the
-instrument or sample. Otherwise, check your configuration file under Microscope Configuration –
-Detection Settings. Microscope Type should be “Ti2”. The integer values correspond to the filter
-turret position (same as written on the filter cubes themselves) and light path (output port). For
-the Nikon Ti2 microscope stand, the light path has the following values:
+.. warning::
 
-- Eyepieces
+   **“Invalid camera model”** (Hamamatsu cameras)
 
-- Right port
+   Only a limited number of Hamamatsu camera models are currently supported. Please check the
+   “Supported Hardware” section above. For the source code version, a new model number can be added to
+   the case structure in the file “Hardware\\Hamamatsu Camera\\Max Lines Auto.vi”. For the stand-alone
+   version, please contact us with the camera model number.
 
-- Bottom (U) port
+.. warning::
 
-- Left port
+   **One of my cameras has an inverted or rotated image relative to the others**
 
-If you see all black in the camera Live Viewer, first adjust the scale bars (or use the Auto Scale
-mode). This should be showing a rapidly changing static signal – zoom in to verify if this isn’t
-clear. If the image is completely black or completely static, there may be a problem either with the
-cameras or with the triggering. The cameras will not acquire frame data unless they receive
-triggering pulses on their “Trigger Input” line from the DAQ. Check the physical connections and
-verify the output port specified in the configuration file under Virtual Camera – Sync Line is
-connected to the “external trigger” port of the camera.
+   You may need to change the Configuration settings for this camera to set one of the “flip” settings
+   to “true”. If it is rotated, this must be fixed by physically rotating the camera so that it is
+   aligned with the others.
 
-**When I move to a new field, some of the molecules near the border are already bleached**.
+.. warning::
 
-Adjust the stage parameters in the configuration file to take a larger step in that direction. These
-values will depend on the size of the illuminated area.
+   **I get errors about the lasers**
 
-**I get errors about dropped frames.**
+   FLASH will not start if any hardware in the configuration file is not found or connecting to it
+   failed. Either change the device type to “Disabled” or delete the Laser Configuration entry
+   corresponding to the device.
 
-Frame data may not get saved to disk if the disk is not fast enough for the large volume of data
-produced by sCMOS camera arrays. The simplest solution is to get an SSD drive dedicated to saving
-movies with a sustained write speed > 2GB/s. Second, limit the use of other disk or CPU-intensive
-applications (such as Python or MATLAB for data analysis) while recording a movie. Finally, before
-acquiring a movie, wait until the previous one has completely saved to disk.
+.. warning::
 
-**FLASH** is in a strange state where buttons do not work or behave unexpectedly.
+   **Lasers are on and shutters are open but I see nothing in the cameras/eyepieces**
 
-Stand-alone version: close FLASH. Verify the icon in the taskbar shows that it successfully exited.
-If it does not, use Task Manager to kill the process. Turn off the cameras, wait 10 seconds, and
-turn them on again. Wait for the cameras to complete their startup procedure and start FLASH. If
-this does not solve the problem, restart your computer.
+   First, manually select filter and output port to eyepieces on the microscope body or remote control
+   pad and verify you get the expected signal. If this does not work, the problem may be with the
+   instrument or sample. Otherwise, check your configuration file under Microscope Configuration –
+   Detection Settings. Microscope Type should be “Ti2”. The integer values correspond to the filter
+   turret position (same as written on the filter cubes themselves) and light path (output port). For
+   the Nikon Ti2 microscope stand, the light path has the following values:
 
-**Still need help?**
+   - Eyepieces
 
-Please email `scott.blanchard@stjude.org <mailto:scott.blanchard@stjude.org>`_ with the following
-information:
+   - Right port
 
-- Name, institution, principal investigator.
+   - Bottom (U) port
 
-- Version of FLASH and type of installation (stand-alone or source code).
+   - Left port
 
-- Describe the problem in detail. Take a screenshot of any error dialogs.
+   If you see all black in the camera Live Viewer, first adjust the scale bars (or use the Auto Scale
+   mode). This should be showing a rapidly changing static signal – zoom in to verify if this isn’t
+   clear. If the image is completely black or completely static, there may be a problem either with the
+   cameras or with the triggering. The cameras will not acquire frame data unless they receive
+   triggering pulses on their “Trigger Input” line from the DAQ. Check the physical connections and
+   verify the output port specified in the configuration file under Virtual Camera – Sync Line is
+   connected to the “external trigger” port of the camera.
 
-- If applicable, attach the relevant log file (C:\\temp\\FLASH.log).
+.. warning::
 
-- Is the problem reproducible? If so, what are the steps to reproduce it?
+   **When I move to a new field, some of the molecules near the border are already bleached**.
 
-- If using the source code, have there been any modifications? If so, have you tried using the original version?
+   Adjust the stage parameters in the configuration file to take a larger step in that direction. These
+   values will depend on the size of the illuminated area.
 
-- Describe your instrument in detail:
+.. warning::
 
-- Camera make, model, and connection interface (e.g., USB). Are you using dedicated PCIe cards for each camera?
+   **I get errors about dropped frames.**
 
-- Microscope stand and stage model and connection interface.
+   Frame data may not get saved to disk if the disk is not fast enough for the large volume of data
+   produced by sCMOS camera arrays. The simplest solution is to get an SSD drive dedicated to saving
+   movies with a sustained write speed > 2GB/s. Second, limit the use of other disk or CPU-intensive
+   applications (such as Python or MATLAB for data analysis) while recording a movie. Finally, before
+   acquiring a movie, wait until the previous one has completely saved to disk.
 
-- DAQ make and model. If possible, use an oscilloscope to investigate whether FLASH is sending the correct signals to devices as expected.
+.. warning::
 
-- Please also include a copy of your configuration file.
+   **FLASH** is in a strange state where buttons do not work or behave unexpectedly.
 
-- Describe your computer and installed software:
+   Stand-alone version: close FLASH. Verify the icon in the taskbar shows that it successfully exited.
+   If it does not, use Task Manager to kill the process. Turn off the cameras, wait 10 seconds, and
+   turn them on again. Wait for the cameras to complete their startup procedure and start FLASH. If
+   this does not solve the problem, restart your computer.
 
-- Windows version and computer hardware: In Windows Control Panel, select “About your PC”. Take a screenshot to include with your report.
+.. warning::
 
-- What version of the Hamamatsu DCAM software is installed?
-You can find this information in Windows Control Panel under “Add/Remove Programs” in Windows Control Panel or by running DCAM Configurator utility. If there are multiple versions installed, please include this information.
+   **Still need help?**
 
-- Source code version: what version of LabVIEW and HVC are you using?
+   Please email `scott.blanchard@stjude.org <mailto:scott.blanchard@stjude.org>`_ with the following
+   information:
 
-- Versions of all other relevant software: NI DAQmx, Nikon Ti2 SDK, etc.
+   - Name, institution, principal investigator.
+
+   - Version of FLASH and type of installation (stand-alone or source code).
+
+   - Describe the problem in detail. Take a screenshot of any error dialogs.
+
+   - If applicable, attach the relevant log file (C:\\temp\\FLASH.log).
+
+   - Is the problem reproducible? If so, what are the steps to reproduce it?
+
+   - If using the source code, have there been any modifications? If so, have you tried using the original version?
+
+   - Describe your instrument in detail:
+
+   - Camera make, model, and connection interface (e.g., USB). Are you using dedicated PCIe cards for each camera?
+
+   - Microscope stand and stage model and connection interface.
+
+   - DAQ make and model. If possible, use an oscilloscope to investigate whether FLASH is sending the correct signals to devices as expected.
+
+   - Please also include a copy of your configuration file.
+
+   - Describe your computer and installed software:
+
+   - Windows version and computer hardware: In Windows Control Panel, select “About your PC”. Take a screenshot to include with your report.
+
+   - What version of the Hamamatsu DCAM software is installed? You can find this information in Windows Control Panel under “Add/Remove Programs” in Windows Control Panel or by running DCAM Configurator utility. If there are multiple versions installed, please include this information.
+
+   - Source code version: what version of LabVIEW and HVC are you using?
+
+   - Versions of all other relevant software: NI DAQmx, Nikon Ti2 SDK, etc.
