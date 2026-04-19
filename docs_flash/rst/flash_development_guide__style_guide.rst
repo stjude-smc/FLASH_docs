@@ -14,7 +14,7 @@ This section describes programming style to help keep the code base consistent a
 
 .. figure:: ../_static/flash_development_guide/img_flash_development_guide_0001.png
    :name: fig-flash_development_guide-1
-   :alt: img_flash_development_guide_0001.png
+   :alt: Terminal pattern
 
    - The bottom left should be error in and bottom right error out.
 
