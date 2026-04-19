@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Architecture &mdash; FLASH documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Execution Walkthrough" href="flash_development_guide__execution_walkthrough.html" />
+    <link rel="prev" title="Prerequisites" href="flash_development_guide__prerequisites.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            FLASH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FLASH Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__flash_documentation.html">FLASH Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__recommended_hardware.html">Recommended Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__hardware_setup_guide.html">Hardware Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__installation_stand_alone_executable_version.html">Installation (stand-alone executable version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__using_flash.html">Using FLASH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__movie_file_format.html">Movie File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__known_issues_and_limitations.html">Known Issues and Limitations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FLASH Development Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subsystems">Subsystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-files">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#automation">Automation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__execution_walkthrough.html">Execution Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__adding_support_for_new_devices.html">Adding support for new devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__compiling_an_executable.html">Compiling an executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__c_libraries.html">C++ libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__team_development_and_other_tips.html">Team Development and Other Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__style_guide.html">Style Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Creating a New UI Window Actor</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ui_window_actor__preamble.html">Creating a New UI Window Actor</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FLASH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Software Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rst/flash_development_guide__software_architecture.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <figure class="align-default" id="fig-flash-documentation-introduction-4">
+<span id="flash-development-guide-software-architecture"></span><img alt="class_diagram_4.png" src="../_images/class_diagram_2.png" />
+</figure>
+<section id="software-architecture">
+<h1>Software Architecture<a class="headerlink" href="#software-architecture" title="Link to this heading"></a></h1>
+<section id="subsystems">
+<h2>Subsystems<a class="headerlink" href="#subsystems" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FLASH is divided into <strong>five subsystems</strong> with distinct roles:</p>
+<ul>
+<li><p><strong>User Interface (UI) layer</strong>. These actors handle all user interactions, communicating this information as messages to the <em>Application</em> actor. There is never direct interaction between UI and hardware actors. The UI does not maintain state – it simply mirrors the state of the Application, as indicated by status messages. The UI checks the validity of input parameters only for user convenience; the <em>Application</em> actor performs any critical parameter checks.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Main Window</strong> is a primary user interface for FLASH and provides most program control.</p></li>
+<li><p><strong>Viewer</strong> displays frame data, streaming status, and live analysis (e.g., particle counts).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Application layer</strong>. This layer includes only one actor: <strong>Application</strong>. It is the core system that loads the instrument configuration, controls the lifecycle of all the other Actors, and translates high-level commands from the UI into a specific sequence of device commands (HAL methods), after verifying input parameters. The Application maintains the state of the program.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Automation Context</strong> is a class within the application layer that provides methods for translating a <strong>Protocol</strong> (parameters from the UI that describe a movie series) into a run plan (array of actions and associated parameters to be sent to the <strong>Application</strong> actor in sequence). This class keeps track of the current step in the run, freeing up the <strong>Application</strong> actor to only consider the immediate step being executed.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Hardware abstraction layer</strong> (HAL). Classes in this layer provides abstract interfaces for mapping general device actions (like “start streaming”) into device-specific commands. Each class in this layer encapsulates the functionality of a device type (<em>Camera</em>, <em>Laser</em>, etc.). The public methods of the class are called by the Application actor via a message, describing a high-level command. The public method then calls protected methods in the same class that abstract device-specific commands (such as “prepare camera”). These protected methods (“hooks”) are overridden by device-specific classes so that dynamic dispatch can be used to call the correct device-specific class. HAL classes do not maintain state.</p></li>
+<li><p><strong>Device layer</strong>. <strong>Actors</strong> in this layer all inherit from a specific HAL class, overriding methods to translate a high-level device action into device-specific code (such as DLL calls). These actors independently monitor the state of device and report this information, including errors, as messages back to the Application actor. When several physical devices are represented by a single driver/API (such as cameras), these should be supported by a single underlying actor to avoid race conditions.</p></li>
+<li><p><strong>Services</strong>. These classes asynchronously execute computationally intensive tasks, such as saving frame data to disk and live image analysis, the results of which are not immediately needed by the application.</p></li>
+</ul>
+</div>
+</section>
+<section id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The main classes within FLASH are <strong>Actors</strong>, which are derived from the <strong>Actor</strong> class of the Actor
+Framework built into LabView. The core <strong>Application</strong>  actor implements the Application subsystem. <strong>UI
+Window</strong> and <strong>Device</strong> are abstract classes that provide generic functionality for the UI and Hardware
+subsystems; specific windows and devices are implemented by subclassing. Messages between actors are
+derived from a separate <strong>Message</strong> class, which is also part of the framework.</p>
+</div>
+<p>Actor (LabVIEW built in type)</p>
+<ul>
+<li><p>Application</p></li>
+<li><p>TIFF Writer (Service)</p></li>
+<li><p>Particle Counter (Service)</p></li>
+<li><p>Timer (Service)</p></li>
+<li><p>UI Window</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Main Window</p></li>
+<li><p>Viewer</p></li>
+<li><p>Splash Screen</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Device</p>
+<blockquote>
+<div><ul>
+<li><p>Autosampler</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Altesta Autosampler (SIELC)</p></li>
+<li><p>Simulated Autosampler</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Camera</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Hamamatsu</p></li>
+<li><p>Andor (SDK2)</p></li>
+<li><p>Photometrics</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Laser</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>LaserQuantum</p></li>
+<li><p>Coherent (Obis and HOPS families)</p></li>
+<li><p>Thorlabs (polarizer motion control)</p></li>
+<li><p>Cobolt</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Microscope Stand</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nikon Ti2</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Power Meter</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NewPort</p></li>
+<li><p>Thorlabs</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Stage Controller</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nikon Ti2</p></li>
+<li><p>ESP30x</p></li>
+<li><p>Ludl</p></li>
+<li><p>ASI</p></li>
+<li><p>Simulated Stage</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Sync Device</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NI DAQ</p></li>
+<li><p>Arduino DAQ (<a class="reference external" href="https://github.com/stjude-smc/sync_device_8bit_legacy">Mega2560</a>; legacy support)</p></li>
+<li><p>Microsync</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Automation Context</p></li>
+<li><p>Protocol</p></li>
+<li><p>TIFF</p></li>
+</ul>
+</section>
+<section id="file-structure">
+<h2>File Structure<a class="headerlink" href="#file-structure" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Below is the virtual file structure of the project, which may not perfectly match the file structure
+on disk, but is very similar:</p>
+</div>
+<ul>
+<li><p><strong>Application</strong>: Application actor, AutomationContext, Protocol classes</p></li>
+<li><p><strong>BinaryTIFF</strong>: TIFF class, Tiff Writer actor, and dcimg2tiff (C++ project)</p></li>
+<li><p><strong>Hardware</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Hardware Abstraction Layer</strong>: abstract classes defining interfaces for each device type</p></li>
+<li><p><strong>Hardware Devices</strong>: concrete child classes implementing support for specific devices</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Protocols</strong>: .json files describing the sequence of steps for executing parameters sweeps and other automated workflows.</p></li>
+<li><p><strong>Resources</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Config</strong>: JSON files defining instrument configurations.</p></li>
+<li><p><strong>Dependencies</strong>: external libraries used by FLASH.</p></li>
+<li><p><strong>dll</strong>: binary dependencies</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>GLOBAL</strong>: global variables (to be removed in a future version)</p></li>
+<li><p><strong>GLOBAL Experiment Metadata.vi:</strong> used for collecting device settings in real time to be used when saving the metadata for output TIFF files.</p></li>
+<li><p><strong>GLOBAL Time-Critical.vi</strong>: used for data sharing of a small number of variables such as frame data to reduce message-passing overhead.</p></li>
+<li><p><strong>Helper VIs</strong>: stand-alone functions that are used throughout the codebase. Any VI’s that have a functional scope within one module should be moved into that lvlib instead.</p></li>
+<li><p><strong>Images</strong>: artwork and icons used for compiling the application.</p></li>
+<li><p><strong>Testing</strong>: VI’s used to isolate specific actors or modules for testing.</p></li>
+<li><p><strong>docs</strong>: documentation, user guide, dev guide, release notes, etc.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Services</strong> (Particle Counter, Timer actors)</p></li>
+<li><p><strong>User Interface</strong> (Main Window, Viewer, Splash Screen actors)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Dialogs</strong>: modal dialog VI’s used by the Main Window actor.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="configuration-files">
+<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FLASH stores instrument configuration settings as JSON files in the “Config” folder. The JSON format
+is compact, human-readable text that is robust to changes in the type definitions between versions.
+For example, when data is not available in the config file, the default value is used. Extraneous
+values/fields are silently ignored. This allows old configuration files to be used by new versions
+of FLASH even when the <strong>Hardware Configuration</strong> typedef has changed significantly.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The format of the file is just a serialized version of the <strong>Hardware Configuration.vi</strong> typedef
+cluster, which includes a cluster for each device type. The <strong>Create Hardware Configuration UI.vi</strong>
+dialog provides a visual representation of this typedef cluster. Enums are matched by their text
+value, so they are robust to expansions and reordering of enum values, but not to changes in the
+text names.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <strong>Init.json</strong> file in the main project directory contains general settings, including a map of
+computer host names and default configuration files to use for each. This mechanism aids in
+deploying the software to facilities with a large number of microscopes. This file can be edited
+with a text editor or you can use the <strong>Create Initialization File.vi</strong> dialog.</p>
+</div>
+</section>
+<section id="automation">
+<h2>Automation<a class="headerlink" href="#automation" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FLASH is designed for workflow automation. The <strong>Application</strong> actor focuses only on executing one
+step at a time, keeping its state management simple. The AutomationContext object, which is stored
+in <strong>Application</strong> private data, executes a sequence of commands that make up the desired workflow.</p>
+<p>Below is a list of the relevant objects and typedefs that coordinate this process:</p>
+<ul class="simple">
+<li><p><strong>Protocol</strong>: encapsulates the high-level parameters describing a movie sequence and includes a method to check the validity of these the settings against the current hardware configuration.</p></li>
+<li><p><strong>AutomationContext</strong>: encapsulates methods to build (compile) and execute the Run Plan.</p></li>
+<li><p><strong>Run Plan</strong>: array of Parallel Blocks describing the full sequence of planned events.</p></li>
+<li><p><strong>Parallel Block</strong>: array of Tasks that will be executed simultaneously.</p></li>
+<li><p><strong>Task</strong>: cluster of Action, Parameters (variant), and correlation ID (integer).</p></li>
+<li><p><strong>Action</strong>: enum that can be directly mapped to <strong>Application</strong> ’s public methods, such as next field, autofocus, set laser power, start streaming, etc.</p></li>
+<li><p><strong>Correlation ID</strong>: unique value used to match notifications of a completed device task against those pending in the Run Plan. The values are sequential for the lifetime of the program.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The normal program flow has <strong>Main Window</strong> creating a Protocol object that is translated into a Run
+Plan for execution, but these classes could be extended to provide more complex utilities for
+creating a Run Plan or loading one from file.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="flash_development_guide__prerequisites.html" class="btn btn-neutral float-left" title="Prerequisites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="flash_development_guide__execution_walkthrough.html" class="btn btn-neutral float-right" title="Execution Walkthrough" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright FLASH contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ libraries &mdash; FLASH documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Team Development and Other Tips" href="flash_development_guide__team_development_and_other_tips.html" />
+    <link rel="prev" title="Compiling an executable" href="flash_development_guide__compiling_an_executable.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            FLASH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FLASH Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__flash_documentation.html">FLASH Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__recommended_hardware.html">Recommended Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__hardware_setup_guide.html">Hardware Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__installation_stand_alone_executable_version.html">Installation (stand-alone executable version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__using_flash.html">Using FLASH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__movie_file_format.html">Movie File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__known_issues_and_limitations.html">Known Issues and Limitations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FLASH Development Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__software_architecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__execution_walkthrough.html">Execution Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__adding_support_for_new_devices.html">Adding support for new devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__compiling_an_executable.html">Compiling an executable</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C++ libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conversion-to-tiff-dcimage2tiff">Conversion to TIFF (dcimage2tiff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#particle-counter">Particle Counter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__team_development_and_other_tips.html">Team Development and Other Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__style_guide.html">Style Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Creating a New UI Window Actor</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ui_window_actor__preamble.html">Creating a New UI Window Actor</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FLASH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">C++ libraries</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rst/flash_development_guide__c_libraries.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="c-libraries">
+<span id="flash-development-guide-c-libraries"></span><h1>C++ libraries<a class="headerlink" href="#c-libraries" title="Link to this heading"></a></h1>
+<section id="conversion-to-tiff-dcimage2tiff">
+<h2>Conversion to TIFF (dcimage2tiff)<a class="headerlink" href="#conversion-to-tiff-dcimage2tiff" title="Link to this heading"></a></h2>
+<p>As mentioned above, conversion from camera-specific intermediate files to TIFF is performed in a
+separate C++ library called dcimg2tiff. This library loads the individual movie files associated
+with distinct cameras (spectral bands), performs vertical/horizontal flips, and tiles them within
+one image for each frame. This approach produces images that mimic those produced with image-
+splitting optical devices such as the Cairn MultiCam.</p>
+<p>For Hamamatsu cameras, the intermediate data is stored as .dcimg files, which are read using the
+DCIMGAPI library from Hamamatsu. The DCIMG format varies significantly between versions and should
+not be read directly.</p>
+<p>For Photometrics, pixel data for each camera are saved to .raw files along with a
+“ImageJ_import_Cam*N*.txt” file, where <em>N</em> is the camera index (0..4). This text file includes two
+critical numbers that can’t be derived directly from the raw files and are used by dcimg2tiff to
+read them. “Offset to first image” is the byte offset to the first pixel and “Gap between images” is
+the number of padding bytes between images. These extra bytes primarily serve to align the images to
+disk block boundaries for faster reading and writing. There is also a short header at the beginning
+of the .raw file, but its contents are undocumented and seem inconsistent between versions.</p>
+<p>The conversion process is very disk intensive, so only one conversion happens at a time. Care should
+be taken in optimizing the code by introducing parallelized disk operations because these may starve
+the camera driver’s hard disk recorder from writing frame data to disk, which will result in dropped
+frames.</p>
+</section>
+<section id="particle-counter">
+<h2>Particle Counter<a class="headerlink" href="#particle-counter" title="Link to this heading"></a></h2>
+<p>By default, FLASH uses a MATLAB node to count the number of particles (PSF maxima) in the field of
+view. The code is copied from SPARTAN. This creates a dependency that we ultimately want to remove.
+Towards this end, FLASH also includes a C++ module using OpenCV to perform these calculations. The
+algorithms are not identical but perform similarly. This module can introduce long application
+freezes that seem to be associated with context switches between LabView threads, which force OpenCV
+to reload static resources. Since no solution is obvious, this module is currently unused.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="flash_development_guide__compiling_an_executable.html" class="btn btn-neutral float-left" title="Compiling an executable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="flash_development_guide__team_development_and_other_tips.html" class="btn btn-neutral float-right" title="Team Development and Other Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright FLASH contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

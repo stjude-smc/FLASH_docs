@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating a New UI Window Actor &mdash; FLASH documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Style Guide" href="flash_development_guide__style_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            FLASH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FLASH Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__flash_documentation.html">FLASH Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__recommended_hardware.html">Recommended Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__hardware_setup_guide.html">Hardware Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__installation_stand_alone_executable_version.html">Installation (stand-alone executable version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__using_flash.html">Using FLASH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__movie_file_format.html">Movie File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_documentation__known_issues_and_limitations.html">Known Issues and Limitations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FLASH Development Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__software_architecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__execution_walkthrough.html">Execution Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__adding_support_for_new_devices.html">Adding support for new devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__compiling_an_executable.html">Compiling an executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__c_libraries.html">C++ libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__team_development_and_other_tips.html">Team Development and Other Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flash_development_guide__style_guide.html">Style Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Creating a New UI Window Actor</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating a New UI Window Actor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-method">Creating a new method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-and-accessing-class-properties">Adding and accessing class properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-message">Creating a message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-a-message">Editing a message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actor-core-vi">Actor Core.vi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#asynchronous-communication">Asynchronous Communication</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FLASH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Creating a New UI Window Actor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rst/ui_window_actor__preamble.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-a-new-ui-window-actor">
+<span id="ui-window-actor-preamble"></span><h1>Creating a New UI Window Actor<a class="headerlink" href="#creating-a-new-ui-window-actor" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>User interface windows that need to run continuously and asynchronously from other actors should be
+instances of the <em>UI Window</em> class. For many modal dialog type use cases, it is best to use a simple
+VI wired directly into the calling VI with the front panel visible, which will block execution until
+the task is complete (see <em>Countdown Timer.vi</em> for example).</p>
+</div>
+<p>Here are the basic steps for creating a new <em>UI Window</em> class:</p>
+<ul class="simple">
+<li><p>Create a new class inheriting from <em>UI Window</em></p></li>
+<li><p>Create an override of the “Create Front Panel Events” that calls “Create User Event.vi” for each type of message that may need to be passed to Actor Core. Bundle these into the class data and update the class .ctl file to include them.</p></li>
+<li><p>Create an override for “Destroy Front Panel Events” that calls “Destroy User Event.vi” to clean up all of the User Event instances.</p></li>
+<li><p>Create an override method for Actor Core.vi. This will generally include all user interface elements on the front panel and a helper loop with an Event Structure in the wire diagram. User interactions with front panel controls trigger cases in the Event Structure and perform the desired actions. Be sure to wire the various User Event properties from the class data into the Event Structure so Actor Core can receive these events.</p></li>
+<li><p>Alternatively, references to front panel controls can be added to the class members that are updated via properties nodes in message handler methods. This approach is useful for handling device status updates where no action is needed other than updating a front panel control (such as the progress bar in the <em>Viewer</em> window).</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Don’t wire TRUE to “Show Front Panel” option when launching the actor, as this will not
+work for built applications. Use VI properties of Actor Core.vi file instead.</p>
+</div>
+</section>
+<section id="creating-a-new-method">
+<h2>Creating a new method<a class="headerlink" href="#creating-a-new-method" title="Link to this heading"></a></h2>
+<p>First decide whether the method should be public (often used for message handling) or private
+(internal methods with no associated messages). To override the behavior of a parent class, right
+click on the virtual folder associated with this scope and select “Add-&gt;VI for Override”. To add a
+method that is specific to the class, right-click on the fold and select “Add-&gt;VI from dynamic
+dispatch template”.</p>
+<p>Utility methods that do not use class data should be created as an ordinary VI and added to the
+.lvlib outside of the class hierarchy.</p>
+</section>
+<section id="adding-and-accessing-class-properties">
+<h2>Adding and accessing class properties<a class="headerlink" href="#adding-and-accessing-class-properties" title="Link to this heading"></a></h2>
+<p>Class properties are defined in a .ctl file in each class, to which new properties can be directly
+added. These are easily accessed by class methods using the cluster “bundle/unbundle by name” Vis
+wired form the class instance wire. To access properties inherited from the base class (such as
+<em>Device</em> or <em>Camera</em>), either use property nodes or create a new method in the parent class
+specifically designed for this task.</p>
+</section>
+<section id="creating-a-message">
+<h2>Creating a message<a class="headerlink" href="#creating-a-message" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Actors generally communicate by asynchronous message passing. This approach minimizes coupling
+between actors and allows them to run simultaneously and independently with minimal chances of race
+conditions.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Messages are processed by the actor in a first-in-first-out order (not in parallel). As such, any
+method used to respond to a <em>Message</em> should generally execute in minimal time; tasks that may block
+while waiting for a resource to become available or are computationally intensive should not be
+executed directly in message handling methods. These are best processed within Actor Core.vi (or
+passed along to some other actor specialized for this task).</p>
+</div>
+<p>To create a new <em>Message</em> for an existing method, first make sure the target vi is in the “Public”
+scope and its connector pane has been finalized, including which inputs are required, as this will
+be harder to change later. Next, right click on the desired method vi and select “Actor
+Framework-&gt;Create Message”. This will execute a script to create a new message class, which should
+reside in the “Messages for this actor” virtual folder. The class properties include all elements
+for each of the VI inputs. The methods include a Do.vi that calls the target method and a “Send
+&lt;method name&gt;.vi” that is used to send a message to the target actor. None of these files should be
+edited directly by the developer.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>It is possible to send messages synchronously by inheriting from the “Send Message And Wait For
+Response” VI, but this is not recommended as it can create race conditions and was intentionally
+made by NI to be difficult to implement.</p>
+</div>
+</section>
+<section id="editing-a-message">
+<h2>Editing a message<a class="headerlink" href="#editing-a-message" title="Link to this heading"></a></h2>
+<p>Changes to class methods do not generally require any changes to the associated message class.
+However, if you have changed the connector pane of a method VI, including which terminals are
+required, you need to update the associated message class. This is accomplished by right-clicking on
+the message class and choosing “Actor Framework-&gt;Rescript message”.</p>
+</section>
+<section id="actor-core-vi">
+<h2>Actor Core.vi<a class="headerlink" href="#actor-core-vi" title="Link to this heading"></a></h2>
+<p>Actor Core.vi runs continuously throughout the lifetime of the actor. This VI typically splits the
+actor instance wire to the parent Actore Core, which implements a “message handler” loop, and a
+<a class="reference external" href="https://www.mooregoodideas.com/actor-framework/basics/AF-basics-part-4/">“helper loop”</a> (in the
+override method). The helper loop runs in its own thread separate from message handling, which
+creates several issues that the developer should keep in mind:</p>
+<ul>
+<li><p>The ‘stale’ actor object wire is not updated when message handling methods modify the class data over time. This wire is still useful, for example for referencing the device configuration, which cannot be changed in FLASH after initialization.</p></li>
+<li><p>Class methods should not be called directly from Actor Core using the stale actor object wire. Instead, use “Read Caller Enqueuer.vi” to self-enqueue messages, which will call class methods using the active reference to the class data.</p></li>
+<li><p>Class methods can communicate with the Actor Core helper loop in a few ways:</p>
+<ul>
+<li><p><strong>User Events:</strong> “Create User Event” VI creates a reference to a queue that is saved in class properties. Class methods call the “Generate User Event” VI to add an event to the queue. Actor Core wires a reference to the queue to its Event Structure and add cases to react each user event type. The class destructor should call “Destroy User Event” to clean up these references. This approach is ideal for reactive actors such as <em>UI Window</em> instances.</p></li>
+<li><p><strong>Data Value Reference (DVR):</strong> a DVR can be referenced by both class methods and Actor Core to refer to the same memory location. This approach is most valuable for time-critical applications such as in <em>Synchronization Device</em>. The flow of information should be unidirectional and extra care must be taken to avoid race conditions.</p></li>
+<li><p><strong>Global variables:</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this approach should be avoided if possible. It is currently used in FLASH for broadcasting some information across the whole application, such as the current frame number. This behavior will be changed in a future version.</p>
+</div>
+</li>
+<li><p>Notifiers, queues, and some other objects are passed by reference and therefore can be used for communication between Actor Core and other class methods, but this isn’t standard in FLASH. This can include references to front panel controls, which can be useful for real-time updates of the user interface elements.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="asynchronous-communication">
+<h2>Asynchronous Communication<a class="headerlink" href="#asynchronous-communication" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One of the most challenging aspects of the Actor Framework for many developers is the asynchronous
+nature of the message passing architecture. Rather than executing an imperative sequence of steps in
+series, Actors send messages to other Actors that execute tasks asynchronously. This works well when
+no reply is needed as steps can be executed simultaneously.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>One solution to provide synchronous execution is for the sending actor to poll a variable (with a
+global variable, functional global variable, data value reference, queue etc.) that is modified by
+the receiving actor when the task is complete. This will block the actor from processing any
+messages during this time, which could lock the application. As such, this approach is only used in
+FLASH for short steps such as waiting for cameras to be ready for acquiring data. The process also
+includes a timeout to prevent the application from locking completely.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Another solution is for the sending actor to be configured as a state machine with member variable
+being checked by every message handler vi to determine how to react to various messages it receives.
+The next step in a process can then be executed when the actor receives a reply that the requested
+task has been completed by the other actor. This is generally the preferred method, and is used by
+the Application actor, but is more complex to implement.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="flash_development_guide__style_guide.html" class="btn btn-neutral float-left" title="Style Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright FLASH contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
