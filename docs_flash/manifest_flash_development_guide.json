@@ -4,11 +4,6 @@
   "split_level": 1,
   "files": [
     {
-      "stem": "flash_development_guide__flash_development_guide",
-      "title": "FLASH Development Guide",
-      "path": "rst/flash_development_guide__flash_development_guide.rst"
-    },
-    {
       "stem": "flash_development_guide__introduction",
       "title": "Introduction",
       "path": "rst/flash_development_guide__introduction.rst"

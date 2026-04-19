@@ -9,7 +9,7 @@ camera must be connected to run the program (there is no simulated camera functi
 necessary, you can avoid some driver dependencies by removing the device .lvlib from the project
 file, assume the device actor class is always launched by path string, which is almost always true.
 
-- **64-bit LabVIEW Professional version **2023 Q3**. This requires a license to be purchased. `https://www.ni.com/en-us/shop/labview.html <https://www.ni.com/en-us/shop/labview.html>`_
+- **64-bit LabVIEW Professional version 2023 Q3**. This requires a license to be purchased. `https://www.ni.com/en-us/shop/labview.html <https://www.ni.com/en-us/shop/labview.html>`_
 
 - JSONtext from JDP Science (download using VI Package Manager).
 

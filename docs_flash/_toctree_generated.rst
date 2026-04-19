@@ -20,7 +20,6 @@
    :caption: FLASH Development Guide
    :maxdepth: 2
 
-   rst/flash_development_guide__flash_development_guide
    rst/flash_development_guide__introduction
    rst/flash_development_guide__prerequisites
    rst/flash_development_guide__software_architecture

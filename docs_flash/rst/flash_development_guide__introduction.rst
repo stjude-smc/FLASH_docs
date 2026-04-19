@@ -19,6 +19,11 @@ Framework <https://labviewwiki.org/wiki/Actor_Framework>`_.
 The image below provides a high-level overview of the modules in FLASH and how they are connected.
 Files are orange, software modules in green, and physical hardware devices in blue.
 
+.. figure:: ../_static/flash_documentation/class_diagram_2.png
+   :name: fig-flash_documentation-introduction-3
+   :alt: class_diagram_3.png
+
+
 After installing all prerequisites listed in the next section, deploy the FLASH source code to
 “C:\\FLASH\\Development”. To run FLASH, open the project file, double click on “FLASH.vi” from
 within the LabVIEW project, and click the “play” button to start the program. Always open the

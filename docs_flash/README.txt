@@ -64,3 +64,19 @@ After you push to git (later)
 Publishing (Read the Docs, GitHub Pages, an internal server, etc.) can use the same sources
 under docs_flash/ and a standard sphinx-build -b html step; hosting details are left for when
 you choose a platform.
+
+You can also style the entries basedon the following ssphinx-styling
+
+Directive      Typical use (semantics)
+.. attention::	Something the reader must notice
+.. caution::	Possible problem if ignored
+.. danger::	    Risk of harm or loss of data
+.. error::	    Error / failed state
+.. hint::	    Helpful but non-obvious tip
+.. important::	Critical information
+.. note::	    Extra note (often blue in RTD)
+.. tip::	    Suggestion / best practice
+.. warning::	Strong caution (often amber/orange in RTD)
+
+Once you clean one .rst or add a new one, ake sur eyou follow the following 
+cd docs_flash && make clean && make html

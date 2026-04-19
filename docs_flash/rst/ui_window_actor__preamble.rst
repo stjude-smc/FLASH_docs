@@ -3,13 +3,15 @@
 Creating a New UI Window Actor
 ==============================
 
-Creating a New UI Window Actor
-------------------------------
+Introduction
+------------
 
-User interface windows that need to run continuously and asynchronously from other actors should be
-instances of the *UI Window* class. For many modal dialog type use cases, it is best to use a simple
-VI wired directly into the calling VI with the front panel visible, which will block execution until
-the task is complete (see *Countdown Timer.vi* for example).
+.. note::
+
+   User interface windows that need to run continuously and asynchronously from other actors should be
+   instances of the *UI Window* class. For many modal dialog type use cases, it is best to use a simple
+   VI wired directly into the calling VI with the front panel visible, which will block execution until
+   the task is complete (see *Countdown Timer.vi* for example).
 
 Here are the basic steps for creating a new *UI Window* class:
 
@@ -23,8 +25,10 @@ Here are the basic steps for creating a new *UI Window* class:
 
 - Alternatively, references to front panel controls can be added to the class members that are updated via properties nodes in message handler methods. This approach is useful for handling device status updates where no action is needed other than updating a front panel control (such as the progress bar in the *Viewer* window).
 
-IMPORTANT: Don’t wire TRUE to “Show Front Panel” option when launching the actor, as this will not
-work for built applications. Use VI properties of Actor Core.vi file instead.
+.. important::
+
+   Don’t wire TRUE to “Show Front Panel” option when launching the actor, as this will not
+   work for built applications. Use VI properties of Actor Core.vi file instead.
 
 Creating a new method
 ---------------------
@@ -50,15 +54,19 @@ specifically designed for this task.
 Creating a message
 ------------------
 
-Actors generally communicate by asynchronous message passing. This approach minimizes coupling
-between actors and allows them to run simultaneously and independently with minimal chances of race
-conditions.
+.. note::
 
-Messages are processed by the actor in a first-in-first-out order (not in parallel). As such, any
-method used to respond to a *Message* should generally execute in minimal time; tasks that may block
-while waiting for a resource to become available or are computationally intensive should not be
-executed directly in message handling methods. These are best processed within Actor Core.vi (or
-passed along to some other actor specialized for this task).
+   Actors generally communicate by asynchronous message passing. This approach minimizes coupling
+   between actors and allows them to run simultaneously and independently with minimal chances of race
+   conditions.
+
+.. important::
+
+   Messages are processed by the actor in a first-in-first-out order (not in parallel). As such, any
+   method used to respond to a *Message* should generally execute in minimal time; tasks that may block
+   while waiting for a resource to become available or are computationally intensive should not be
+   executed directly in message handling methods. These are best processed within Actor Core.vi (or
+   passed along to some other actor specialized for this task).
 
 To create a new *Message* for an existing method, first make sure the target vi is in the “Public”
 scope and its connector pane has been finalized, including which inputs are required, as this will
@@ -69,9 +77,11 @@ for each of the VI inputs. The methods include a Do.vi that calls the target met
 <method name>.vi” that is used to send a message to the target actor. None of these files should be
 edited directly by the developer.
 
-It is possible to send messages synchronously by inheriting from the “Send Message And Wait For
-Response” VI, but this is not recommended as it can create race conditions and was intentionally
-made by NI to be difficult to implement.
+.. caution::
+
+   It is possible to send messages synchronously by inheriting from the “Send Message And Wait For
+   Response” VI, but this is not recommended as it can create race conditions and was intentionally
+   made by NI to be difficult to implement.
 
 Editing a message
 -----------------
@@ -96,31 +106,41 @@ creates several issues that the developer should keep in mind:
 
 - Class methods can communicate with the Actor Core helper loop in a few ways:
 
-- **User Events:** “Create User Event” VI creates a reference to a queue that is saved in class properties. Class methods call the “Generate User Event” VI to add an event to the queue. Actor Core wires a reference to the queue to its Event Structure and add cases to react each user event type. The class destructor should call “Destroy User Event” to clean up these references. This approach is ideal for reactive actors such as *UI Window* instances.
+  - **User Events:** “Create User Event” VI creates a reference to a queue that is saved in class properties. Class methods call the “Generate User Event” VI to add an event to the queue. Actor Core wires a reference to the queue to its Event Structure and add cases to react each user event type. The class destructor should call “Destroy User Event” to clean up these references. This approach is ideal for reactive actors such as *UI Window* instances.
 
-- **Data Value Reference (DVR):** a DVR can be referenced by both class methods and Actor Core to refer to the same memory location. This approach is most valuable for time-critical applications such as in *Synchronization Device*. The flow of information should be unidirectional and extra care must be taken to avoid race conditions.
+  - **Data Value Reference (DVR):** a DVR can be referenced by both class methods and Actor Core to refer to the same memory location. This approach is most valuable for time-critical applications such as in *Synchronization Device*. The flow of information should be unidirectional and extra care must be taken to avoid race conditions.
 
-- **Global variables:** this approach should be avoided if possible. It is currently used in FLASH for broadcasting some information across the whole application, such as the current frame number. This behavior will be changed in a future version.
+  - **Global variables:**
 
-- Notifiers, queues, and some other objects are passed by reference and therefore can be used for communication between Actor Core and other class methods, but this isn’t standard in FLASH. This can include references to front panel controls, which can be useful for real-time updates of the user interface elements.
+    .. warning::
+
+       this approach should be avoided if possible. It is currently used in FLASH for broadcasting some information across the whole application, such as the current frame number. This behavior will be changed in a future version.
+
+  - Notifiers, queues, and some other objects are passed by reference and therefore can be used for communication between Actor Core and other class methods, but this isn’t standard in FLASH. This can include references to front panel controls, which can be useful for real-time updates of the user interface elements.
 
 Asynchronous Communication
 --------------------------
 
-One of the most challenging aspects of the Actor Framework for many developers is the asynchronous
-nature of the message passing architecture. Rather than executing an imperative sequence of steps in
-series, Actors send messages to other Actors that execute tasks asynchronously. This works well when
-no reply is needed as steps can be executed simultaneously.
+.. note::
 
-One solution to provide synchronous execution is for the sending actor to poll a variable (with a
-global variable, functional global variable, data value reference, queue etc.) that is modified by
-the receiving actor when the task is complete. This will block the actor from processing any
-messages during this time, which could lock the application. As such, this approach is only used in
-FLASH for short steps such as waiting for cameras to be ready for acquiring data. The process also
-includes a timeout to prevent the application from locking completely.
+   One of the most challenging aspects of the Actor Framework for many developers is the asynchronous
+   nature of the message passing architecture. Rather than executing an imperative sequence of steps in
+   series, Actors send messages to other Actors that execute tasks asynchronously. This works well when
+   no reply is needed as steps can be executed simultaneously.
 
-Another solution is for the sending actor to be configured as a state machine with member variable
-being checked by every message handler vi to determine how to react to various messages it receives.
-The next step in a process can then be executed when the actor receives a reply that the requested
-task has been completed by the other actor. This is generally the preferred method, and is used by
-the Application actor, but is more complex to implement.
+.. danger::
+
+   One solution to provide synchronous execution is for the sending actor to poll a variable (with a
+   global variable, functional global variable, data value reference, queue etc.) that is modified by
+   the receiving actor when the task is complete. This will block the actor from processing any
+   messages during this time, which could lock the application. As such, this approach is only used in
+   FLASH for short steps such as waiting for cameras to be ready for acquiring data. The process also
+   includes a timeout to prevent the application from locking completely.
+
+.. tip::
+
+   Another solution is for the sending actor to be configured as a state machine with member variable
+   being checked by every message handler vi to determine how to react to various messages it receives.
+   The next step in a process can then be executed when the actor receives a reply that the requested
+   task has been completed by the other actor. This is generally the preferred method, and is used by
+   the Application actor, but is more complex to implement.

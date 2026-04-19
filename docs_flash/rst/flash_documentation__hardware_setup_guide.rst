@@ -8,6 +8,7 @@ For a general overview of the experimental setup, please see the following paper
 
 
 **Cameras:**
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     - All cameras being used together should have the same camera model and firmware version.
 
@@ -19,6 +20,7 @@ For a general overview of the experimental setup, please see the following paper
 
 
 **Triggering:**
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     - Configure the shutter driver(s) so that the shutters are closed with 0V input and open with +5V input. With Uniblitz drivers, connect the appropriate DAQ outputs to the “pulse input” port.
 
@@ -29,7 +31,8 @@ For a general overview of the experimental setup, please see the following paper
     - For `Microsync <https://github.com/stjude-smc/microsync>`_ device (Arduino Due), pins D8-11 control the four shutter lines (e.g., 473, 532, 640, 721 nm), pin D7 is used for camera triggering, and pin D6 is used for fluidics triggering. Optionally, pins D12 (input) and D13 (output) are used for an interlock loop. We recommend using the `custom shield <https://github.com/stjude-smc/PCB-microsync>`_ for this device to convert internal 3.3V to TTL (5V) expected by most devices.
 
 
-**Other:**
+**Other:**  
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     - Recommended: disable power management in Device Manager for all USB devices (and any hubs they depend on). Otherwise, devices may randomly fail when put to sleep. This is a known problem for Hamamatsu cameras connected via USB PCIe cards.
 

@@ -18,21 +18,21 @@ Below are the steps executed on successful startup:
 
 - **Application/Init HW.vi** initialize configured hardware:
 
-- **Application/Initialize Lasers.vi:** launches *Laser* actors (up to 4).
+    - **Application/Initialize Lasers.vi:** launches *Laser* actors (up to 4).
 
-- **Application/Initialize Virtual Microscope.vi:** launches *Microscope* actor.
+    - **Application/Initialize Virtual Microscope.vi:** launches *Microscope* actor.
 
-- **Application/Initialize Stage Controller.vi:** launches *Stage Controller* actor.
+    - **Application/Initialize Stage Controller.vi:** launches *Stage Controller* actor.
 
-- **Application/Init Power Meter.vi:** launches *Power Meter* actor.
+    - **Application/Init Power Meter.vi:** launches *Power Meter* actor.
 
-- **Application/Initialize Shutters.vi:** launches *Sync Device* actor.
+    - **Application/Initialize Shutters.vi:** launches *Sync Device* actor.
 
-- **Application/Initialize Virtual Camera.vi**: launches *Camera* actor.
+    - **Application/Initialize Virtual Camera.vi**: launches *Camera* actor.
 
-- **Application/Initialize UI.vi**: launches service actors and initializes *AutomationContext*.
+    - **Application/Initialize UI.vi**: launches service actors and initializes *AutomationContext*.
 
-- **Application/Init Telemetry.vi**: sends telemetry data to server for usage statistics.
+    - **Application/Init Telemetry.vi**: sends telemetry data to server for usage statistics.
 
 - **Application/Startup.vi*** launches the *Main Window* actor and closes the splash screen.
 

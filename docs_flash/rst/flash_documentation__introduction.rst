@@ -7,11 +7,6 @@ This software is intended for the acquisition of image stacks (movies) for singl
 experiments utilizing total internal reflection fluorescence (TIRF) microscopes and wide-field sCMOS
 cameras. It is designed to be used with the SPARTAN data analysis software.
 
-.. figure:: ../_static/flash_documentation/class_diagram_2.png
-   :name: fig-flash_documentation-introduction-2
-   :alt: class_diagram_2.png
-
-
 Please cite the following paper if you use FLASH in your laboratory:
 
 Juette MF, Terry DS, Wasserman MR, Altman RB, Zhou Z, Zhao H, Blanchard SC. Single-molecule imaging

@@ -1,6 +1,6 @@
 .. FLASH documentation master file
 
-FLASH documentation
+Get Started
 ===================
 
 Regenerated ``.rst`` files with
