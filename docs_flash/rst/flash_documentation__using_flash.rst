@@ -12,7 +12,7 @@ After starting, the Main Window will open. The Main Window is used for controlli
 collecting data:
 
 
-.. figure:: ../_static/flash_documentation/MainWindow.PNG
+.. figure:: ../_static/flash_documentation/manual_images/MainWindowCW.PNG
    :name: fig-flash_main_window-1
    :alt: MainWindow.png
 

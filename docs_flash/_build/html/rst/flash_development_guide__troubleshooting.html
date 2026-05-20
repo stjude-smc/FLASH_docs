@@ -69,6 +69,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#error-codes">Error Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#log-files">Log Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keyboard-shortcuts-for-labview">Keyboard Shortcuts for LabVIEW</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flash_development_guide__style_guide.html">Style Guide</a></li>
@@ -281,6 +282,18 @@ case of program crashes.</p>
 </div></blockquote>
 <p>dcimg2tiff logs any errors in C:\temp\dcimg2tiff.log.</p>
 </div>
+</section>
+<section id="keyboard-shortcuts-for-labview">
+<h2>Keyboard Shortcuts for LabVIEW<a class="headerlink" href="#keyboard-shortcuts-for-labview" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Ctrl-U</strong>:</p></li>
+<li><p><strong>Ctrl-E</strong>:</p></li>
+<li><p><strong>Ctrl-W</strong>:</p></li>
+<li><p><strong>Ctrl-B</strong>:</p></li>
+<li><p><strong>Ctrl-Space</strong>:</p></li>
+</ul>
+<p>Note about using the <em>‘Pre Launch Init’</em> method: actors CANNOT be launched there (it will cause the program to hang without any error message). The best place for most initialization code is the actor core itself. ‘Pre Launch Init’ should only be used to check if pre-requisites for running the core are met (e.g. parameters initialized?) and abort launching the actor if necessary.</p>
+<p>Don’t use <em>“show FP”</em> when launching actor, as this will not work for built application. Use VI properties of Actor Core instead.</p>
 </section>
 </section>
 

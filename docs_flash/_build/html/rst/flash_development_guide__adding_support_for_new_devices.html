@@ -127,7 +127,7 @@ guide of how each <em>Device</em> class would be updated to support a new device
 <li><p><strong>Laser Quantum</strong>: all lasers in this series currently support a common RS232 protocol, so new lasers from this company should be supported without modification.</p></li>
 <li><p><strong>Thorlabs:</strong> any “KCubeDCServo” type device is probably supported without modification. For other rotation stage devices, <em>Initialize.vi</em> and <em>Set Power.vi</em> may need to be modified.</p></li>
 </ul>
-<p><strong>Sync Device**</strong>:**</p>
+<p><strong>Sync Device:</strong></p>
 <ul class="simple">
 <li><p>Many National Instruments DAQ devices are likely supported by simply modifying the NI-DAQmx physical channel addresses in the configuration file. However, we do not recommend this path because the jitter of triggering from software is not very good.</p></li>
 <li><p>Other Arduino-type devices can be supported if they can be programmed to accept the same communication protocol as those already supported by FLASH.</p></li>

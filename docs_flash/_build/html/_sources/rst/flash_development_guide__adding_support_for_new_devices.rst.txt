@@ -33,7 +33,7 @@ guide of how each *Device* class would be updated to support a new device type.
 
 - **Thorlabs:** any “KCubeDCServo” type device is probably supported without modification. For other rotation stage devices, *Initialize.vi* and *Set Power.vi* may need to be modified.
 
-**Sync Device****:**
+**Sync Device:**
 
 - Many National Instruments DAQ devices are likely supported by simply modifying the NI-DAQmx physical channel addresses in the configuration file. However, we do not recommend this path because the jitter of triggering from software is not very good.
 

@@ -2,6 +2,17 @@
 
 FLASH Documentation
 ===================
+.. |flash_logo| image:: ../_static/flash_documentation/manual_images/FLASH_logo.PNG
+   :alt: FLASHlogo1
+   :width: 180px
+
+.. container::
+
+   .. hlist::
+      :columns: 1
+
+      - |flash_logo|
+      
 
 Version 1.10.1 (February 10, 2026)
 Daniel Terry and Manuel Juette

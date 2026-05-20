@@ -37,3 +37,7 @@ For a general overview of the experimental setup, please see the following paper
     - Recommended: disable power management in Device Manager for all USB devices (and any hubs they depend on). Otherwise, devices may randomly fail when put to sleep. This is a known problem for Hamamatsu cameras connected via USB PCIe cards.
 
     - Control software associated with each device, such as the RemoteApp program for LaserQuantum lasers or Coherent Connection can be useful both to verify the device is properly connected and determine the COM port and other connection parameters for it.
+
+.. figure:: ../_static/flash_documentation/manual_images/FLASH+microsync.PNG
+   :name: fig-flash_documentation-introduction-5
+   :alt: FLASH+microsync.PNG

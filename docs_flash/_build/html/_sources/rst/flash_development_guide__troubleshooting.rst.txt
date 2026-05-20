@@ -141,3 +141,15 @@ Log Files
     - 1.953 TMCC_GETAREA_40 OK hov=0 vov=0 hwv=2048 vwv=2048
    
    dcimg2tiff logs any errors in C:\\temp\\dcimg2tiff.log.
+
+Keyboard Shortcuts for LabVIEW
+------------------------------
+- **Ctrl-U**: 
+- **Ctrl-E**: 
+- **Ctrl-W**: 
+- **Ctrl-B**: 
+- **Ctrl-Space**: 
+
+Note about using the *'Pre Launch Init'* method: actors CANNOT be launched there (it will cause the program to hang without any error message). The best place for most initialization code is the actor core itself. 'Pre Launch Init' should only be used to check if pre-requisites for running the core are met (e.g. parameters initialized?) and abort launching the actor if necessary. 
+
+Don’t use *“show FP”* when launching actor, as this will not work for built application. Use VI properties of Actor Core instead.
