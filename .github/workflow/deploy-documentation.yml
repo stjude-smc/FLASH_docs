@@ -2,7 +2,7 @@ name: Deploy Documentation to GitHub Pages
 
 on:
   push:
-    branches: [testing]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -27,13 +27,13 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt
+        run: pip install -r docs_flash/requirements.txt
 
       - name: Build documentation
-        run: sphinx-build -b html docs docs/_build/html
+        run: sphinx-build -b html docs_flash docs_flash/_build/html
 
       - name: Disable Jekyll
-        run: touch docs/_build/html/.nojekyll
+        run: touch docs_flash/_build/html/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/_build/html
+          path: docs_flash/_build/html
 
   deploy:
     needs: build
