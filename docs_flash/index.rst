@@ -3,7 +3,7 @@
 .. figure:: _static/flash_documentation/manual_images/FLASH_logo.PNG
    :name: fig-flash_documentation-introduction-4
    :alt: FLASH_logo.PNG
-   :width: 150px
+  
 
 Get Started
 ===================
