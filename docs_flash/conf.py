@@ -32,3 +32,7 @@ html_title = "FLASH documentation"
 html_short_title = "FLASH"
 html_static_path = ["_static"]
 htmlhelp_basename = "FLASHdoc"
+
+html_baseurl = "https://stjude-smc.github.io/FLASH_docs/"
+
+#
